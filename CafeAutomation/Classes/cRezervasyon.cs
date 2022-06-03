@@ -66,7 +66,7 @@ namespace CafeOtomasyonu.Classes
         {
             bool result = false;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update REZERVASYONLAR set DURUM=0 where ADISYONID=@adisyonId", con);
+            SqlCommand cmd = new SqlCommand("update REZERVASYONLAR set DURUM=1 where ADISYONID=@adisyonId", con);
 
             try
             {
@@ -243,7 +243,7 @@ namespace CafeOtomasyonu.Classes
                 cmd.Parameters.Add("@TARIH", SqlDbType.Date).Value = r.Date;
                 cmd.Parameters.Add("@ACIKLAMA", SqlDbType.VarChar).Value = r.Description;
 
-                result = Convert.ToBoolean(cmd.ExecuteScalar());
+                result = Convert.ToBoolean(cmd.ExecuteNonQuery());
             }
             catch (SqlException ex)
             {

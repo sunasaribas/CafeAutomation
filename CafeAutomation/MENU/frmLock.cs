@@ -14,5 +14,12 @@ namespace CafeOtomasyonu.MENU
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmGiris frm = new frmGiris();
+            this.Close();
+            frm.Show();
+        }
     }
 }

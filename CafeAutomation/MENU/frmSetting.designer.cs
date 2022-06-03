@@ -40,13 +40,17 @@ namespace CafeOtomasyonu.MENU
             this.txtYeniSifreTekrar = new System.Windows.Forms.TextBox();
             this.txtYeniSifre = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtPersonelID2 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtGorevID2 = new System.Windows.Forms.TextBox();
             this.btnBilgiDegistir = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
             this.cbGorevi = new System.Windows.Forms.ComboBox();
-            this.txtSifreTekrar = new System.Windows.Forms.TextBox();
             this.txtSifre = new System.Windows.Forms.TextBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtAd = new System.Windows.Forms.TextBox();
@@ -63,7 +67,6 @@ namespace CafeOtomasyonu.MENU
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCikis = new System.Windows.Forms.Button();
             this.btnGeriDon = new System.Windows.Forms.Button();
-            this.txtPersonelID2 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -75,10 +78,7 @@ namespace CafeOtomasyonu.MENU
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblBilgi = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.txtSifreTekrar = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -129,6 +129,7 @@ namespace CafeOtomasyonu.MENU
             // 
             this.txtPersonelId.Location = new System.Drawing.Point(298, 34);
             this.txtPersonelId.Name = "txtPersonelId";
+            this.txtPersonelId.ReadOnly = true;
             this.txtPersonelId.Size = new System.Drawing.Size(15, 35);
             this.txtPersonelId.TabIndex = 5;
             // 
@@ -178,9 +179,11 @@ namespace CafeOtomasyonu.MENU
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.txtSifreTekrar);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.txtPersonelID2);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtGorevID2);
             this.groupBox2.Controls.Add(this.btnBilgiDegistir);
@@ -188,7 +191,6 @@ namespace CafeOtomasyonu.MENU
             this.groupBox2.Controls.Add(this.btnEkle);
             this.groupBox2.Controls.Add(this.btnYeni);
             this.groupBox2.Controls.Add(this.cbGorevi);
-            this.groupBox2.Controls.Add(this.txtSifreTekrar);
             this.groupBox2.Controls.Add(this.txtSifre);
             this.groupBox2.Controls.Add(this.txtSoyad);
             this.groupBox2.Controls.Add(this.txtAd);
@@ -205,10 +207,59 @@ namespace CafeOtomasyonu.MENU
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Location = new System.Drawing.Point(280, 389);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(80, 24);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Değiştir";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(28, 388);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(33, 24);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Sil";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.Location = new System.Drawing.Point(22, 300);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 24);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Yeni";
+            // 
+            // txtPersonelID2
+            // 
+            this.txtPersonelID2.Location = new System.Drawing.Point(312, 41);
+            this.txtPersonelID2.Name = "txtPersonelID2";
+            this.txtPersonelID2.ReadOnly = true;
+            this.txtPersonelID2.Size = new System.Drawing.Size(10, 35);
+            this.txtPersonelID2.TabIndex = 14;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(284, 300);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 24);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Kaydet";
+            // 
             // txtGorevID2
             // 
             this.txtGorevID2.Location = new System.Drawing.Point(312, 226);
             this.txtGorevID2.Name = "txtGorevID2";
+            this.txtGorevID2.ReadOnly = true;
             this.txtGorevID2.Size = new System.Drawing.Size(10, 35);
             this.txtGorevID2.TabIndex = 15;
             // 
@@ -264,13 +315,6 @@ namespace CafeOtomasyonu.MENU
             this.cbGorevi.Size = new System.Drawing.Size(156, 37);
             this.cbGorevi.TabIndex = 7;
             this.cbGorevi.SelectedIndexChanged += new System.EventHandler(this.cbGorevi_SelectedIndexChanged);
-            // 
-            // txtSifreTekrar
-            // 
-            this.txtSifreTekrar.Location = new System.Drawing.Point(152, 179);
-            this.txtSifreTekrar.Name = "txtSifreTekrar";
-            this.txtSifreTekrar.Size = new System.Drawing.Size(156, 35);
-            this.txtSifreTekrar.TabIndex = 6;
             // 
             // txtSifre
             // 
@@ -423,13 +467,6 @@ namespace CafeOtomasyonu.MENU
             this.btnGeriDon.UseVisualStyleBackColor = false;
             this.btnGeriDon.Click += new System.EventHandler(this.btnGeriDon_Click);
             // 
-            // txtPersonelID2
-            // 
-            this.txtPersonelID2.Location = new System.Drawing.Point(729, 84);
-            this.txtPersonelID2.Name = "txtPersonelID2";
-            this.txtPersonelID2.Size = new System.Drawing.Size(10, 26);
-            this.txtPersonelID2.TabIndex = 14;
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
@@ -474,6 +511,7 @@ namespace CafeOtomasyonu.MENU
             // 
             this.textBox1.Location = new System.Drawing.Point(298, 34);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(15, 35);
             this.textBox1.TabIndex = 5;
             // 
@@ -543,45 +581,12 @@ namespace CafeOtomasyonu.MENU
             this.lblBilgi.TabIndex = 17;
             this.lblBilgi.Text = "Giriş yapan";
             // 
-            // label12
+            // txtSifreTekrar
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(284, 300);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 24);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Kaydet";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label13.Location = new System.Drawing.Point(22, 300);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 24);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Yeni";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(28, 388);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(33, 24);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Sil";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.Location = new System.Drawing.Point(280, 389);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(80, 24);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "Değiştir";
+            this.txtSifreTekrar.Location = new System.Drawing.Point(152, 179);
+            this.txtSifreTekrar.Name = "txtSifreTekrar";
+            this.txtSifreTekrar.Size = new System.Drawing.Size(156, 35);
+            this.txtSifreTekrar.TabIndex = 20;
             // 
             // frmSetting
             // 
@@ -593,7 +598,6 @@ namespace CafeOtomasyonu.MENU
             this.Controls.Add(this.lblBilgi);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.txtPersonelID2);
             this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.btnGeriDon);
             this.Controls.Add(this.groupBox2);
@@ -635,7 +639,8 @@ namespace CafeOtomasyonu.MENU
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.Button btnYeni;
         private System.Windows.Forms.ComboBox cbGorevi;
-        private System.Windows.Forms.TextBox txtSifreTekrar;
+        private System.Windows.Forms.TextBox 
+            Tekrar;
         private System.Windows.Forms.TextBox txtSifre;
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.Label label8;
@@ -668,5 +673,6 @@ namespace CafeOtomasyonu.MENU
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtSifreTekrar;
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using CafeOtomasyonu.Classes;
+using CafeOtomasyonu.MENU;
 
 namespace CafeOtomasyonu
 {
@@ -76,7 +77,7 @@ namespace CafeOtomasyonu
         private void btnRezervasyonAc_Click(object sender, EventArgs e)
         {
             cRezervasyon r = new cRezervasyon();
-            if (lvMusteriler.Items.Count > 0)
+            if (lvMusteriler.SelectedItems.Count > 0)
             {
                 bool sonuc = r.RezervasyonAcikmiKontrol(Convert.ToInt32(lvMusteriler.SelectedItems[0].SubItems[0].Text));
                 if (!sonuc)
@@ -100,6 +101,7 @@ namespace CafeOtomasyonu
                                 r.Date = Convert.ToDateTime(txtTarih.Text);
                                 r.ClientCount = Convert.ToInt32(txtKisiSayisi.Text);
                                 r.Description = txtAciklama.Text;
+
                                 r.AdditionId = a.RezervasyonAdisyonAc(a);
                                 sonuc = r.RezervasyonAc(r); ;
 
@@ -171,7 +173,71 @@ namespace CafeOtomasyonu
             int kapasite = kapasitesi.KAPASITE;
             txtMasaNo.Text = Convert.ToString(kapasitesi.ID);
 
+            cbKisiSayisi.Items.Clear();
+            for (int i = 0; i < kapasite; i++)
+            {
+                cbKisiSayisi.Items.Add(i + 1);
+            }
+        }
 
+        private void cbMasa_MouseEnter(object sender, EventArgs e)
+        {
+            cbMasa.Width = 305;
+            
+        }
+
+        private void cbMasa_MouseLeave(object sender, EventArgs e)
+        {
+            cbMasa.Width = 23;
+        }
+
+        private void cbKisiSayisi_MouseLeave(object sender, EventArgs e)
+        {
+            cbKisiSayisi.Width = 23;
+        }
+
+        private void cbKisiSayisi_MouseEnter(object sender, EventArgs e)
+        {
+            cbKisiSayisi.Width = 100;
+        }
+
+        private void btnRezervasyonKontrol_Click(object sender, EventArgs e)
+        {
+            frmSiparisKontrol frm = new frmSiparisKontrol();
+            this.Close();
+            frm.Show();
+        }
+
+        private void btnYeniMusteri_Click(object sender, EventArgs e)
+        {
+            frmMusteriEkleme frm = new frmMusteriEkleme();
+            cGenel._musteriEkleme = 0;
+            frm.btnMusteriGuncelle.Visible = false ;
+            frm.btnYeniMusteri.Visible = true;
+            this.Close();
+            frm.Show();
+        }
+
+        private void btnMusteriGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lvMusteriler.SelectedItems.Count>0)
+            {
+                frmMusteriEkleme me = new frmMusteriEkleme();
+                cGenel._musteriEkleme = 0;
+                cGenel._musteriId = Convert.ToInt32((lvMusteriler.SelectedItems[0].SubItems[0].Text));
+                me.btnMusteriGuncelle.Visible = true;
+                me.btnYeniMusteri.Visible = false;
+                this.Close();
+                me.Show();
+
+            }        
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            frmMenu frm = new frmMenu();
+            this.Close();
+            frm.Show();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace CafeOtomasyonu.MENU
        
         private void frmBill_Load(object sender, EventArgs e)
         {
-         
+              
             if (cGenel._ServisTurNo==1)
             {
                 lblAdisyonId.Text = cGenel._AdisyonId;
@@ -201,8 +201,10 @@ namespace CafeOtomasyonu.MENU
                 {
                     MessageBox.Show("Hesap kapatılmıştır!");
                     masalar.setChangeTableState(Convert.ToString(masaid), 1);
+
                     cRezervasyon c = new cRezervasyon();
                     c.rezervationclose(Convert.ToInt32(lblAdisyonId.Text));
+
                     cAdisyon a = new cAdisyon();
                     a.adisyonkapat(Convert.ToInt32(lblAdisyonId.Text), 0);
 

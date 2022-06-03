@@ -68,12 +68,12 @@ namespace CafeOtomasyonu.MENU
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtYeniSifre.Text.Trim()!="" || txtYeniSifreTekrar.Text.Trim()!="")
+            if (txtYeniSifre.Text.Trim() != "" || txtYeniSifreTekrar.Text.Trim() != "")
             {
 
-                if (txtYeniSifre.Text ==txtYeniSifreTekrar.Text)
+                if (txtYeniSifre.Text == txtYeniSifreTekrar.Text)
                 {
-                    if (txtPersonelId.Text!="")
+                    if (txtPersonelId.Text != "")
                     {
                         cPersoneller c = new cPersoneller(); ;
                         bool sonuc = c.personelSifreDegistir(Convert.ToInt32(txtPersonelId.Text), txtYeniSifre.Text);
@@ -109,7 +109,7 @@ namespace CafeOtomasyonu.MENU
         private void cbPersonel_SelectedIndexChanged(object sender, EventArgs e)
         {
             cPersoneller c = (cPersoneller)cbPersonel.SelectedItem;
-            txtPersonelID2.Text = Convert.ToString(c.PersonelId);
+            txtPersonelId.Text = Convert.ToString(c.PersonelId);
         }
 
         private void btnYeni_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace CafeOtomasyonu.MENU
                 if (MessageBox.Show("Silmek istediğinize emin misiniz?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     cPersoneller c = new cPersoneller();
-                    bool sonuc=c.personelSil(Convert.ToInt32(lvPersoneller.SelectedItems[0].Text));
+                    bool sonuc = c.personelSil(Convert.ToInt32(lvPersoneller.SelectedItems[0].Text));
                     if (sonuc)
                     {
                         MessageBox.Show("Kayıt başarıyla silinmiştiir.");
@@ -145,21 +145,21 @@ namespace CafeOtomasyonu.MENU
                     MessageBox.Show("Bir kayıt seçiniz.");
                 }
             }
-            
+
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            if (txtAd.Text.Trim()!="" & txtSoyad.Text.Trim()!="" & txtSifre.Text.Trim() !="" & txtSifreTekrar.Text!="" & txtGorevID2.Text.Trim() !="")
+            if (txtAd.Text.Trim() != "" & txtSoyad.Text.Trim() != "" & txtSifre.Text.Trim() != "" & txtSifreTekrar.Text != "" & txtGorevID2.Text.Trim() != "")
             {
-                if ((txtSifreTekrar.Text.Trim() ==txtSifre.Text.Trim())&& (txtSifre.Text.Length>5 || txtSifreTekrar.Text.Length>5))
+                if ((txtSifreTekrar.Text.Trim() == txtSifre.Text.Trim()) && (txtSifre.Text.Length > 5 || txtSifreTekrar.Text.Length > 5))
                 {
                     cPersoneller c = new cPersoneller();
                     c.PersonelAd = txtAd.Text.Trim();
                     c.PersonelSoyad = txtSoyad.Text.Trim();
                     c.PersonelParola = txtSifre.Text;
                     c.PersonelGorevId = Convert.ToInt32(txtGorevID2.Text);
-                    bool sonuc= c.personelEkle(c);
+                    bool sonuc = c.personelEkle(c);
 
                     if (sonuc)
                     {
@@ -198,7 +198,7 @@ namespace CafeOtomasyonu.MENU
                         c.PersonelSoyad = txtSoyad.Text.Trim();
                         c.PersonelParola = txtSifre.Text;
                         c.PersonelGorevId = Convert.ToInt32(txtGorevID2.Text);
-                        bool sonuc = c.personelGuncelle(c,Convert.ToInt32(txtPersonelID2.Text));
+                        bool sonuc = c.personelGuncelle(c, Convert.ToInt32(txtPersonelID2.Text));
 
                         if (sonuc)
                         {
@@ -228,41 +228,41 @@ namespace CafeOtomasyonu.MENU
 
         private void button2_Click(object sender, EventArgs e)
         {
-                if (textBox2.Text.Trim() != "" || textBox3.Text.Trim() != "")
+            if (textBox2.Text.Trim() != "" || textBox3.Text.Trim() != "")
+            {
+                if (textBox2.Text == textBox3.Text)
                 {
-                    if (textBox2.Text == textBox3.Text)
+                    if (cGenel._personelId.ToString() != "")
                     {
-                        if (cGenel._personelId.ToString() != "")
+                        cPersoneller c = new cPersoneller(); ;
+                        bool sonuc = c.personelSifreDegistir(Convert.ToInt32(cGenel._personelId), textBox2.Text);
+                        if (sonuc)
                         {
-                            cPersoneller c = new cPersoneller(); ;
-                            bool sonuc = c.personelSifreDegistir(Convert.ToInt32(cGenel._personelId), textBox2.Text);
-                            if (sonuc)
-                            {
-                                MessageBox.Show("Şifre değiştirme işlemi başarıyla gerçekleşmiştir!");
-                            }
+                            MessageBox.Show("Şifre değiştirme işlemi başarıyla gerçekleşmiştir!");
                         }
-                        else
-                        {
-                            MessageBox.Show("Personel seçiniz!");
-                        }
-
                     }
                     else
                     {
-                        MessageBox.Show("Şifreeler aynı değil,lütfen tekrar deneyiniz.");
-
+                        MessageBox.Show("Personel seçiniz!");
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("Şifre alanını boş bırakmayınız!");
+                    MessageBox.Show("Şifreeler aynı değil,lütfen tekrar deneyiniz.");
+
                 }
+            }
+            else
+            {
+                MessageBox.Show("Şifre alanını boş bırakmayınız!");
+            }
 
         }
 
         private void lvPersoneller_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvPersoneller.SelectedItems.Count>0)
+            if (lvPersoneller.SelectedItems.Count > 0)
             {
                 btnSil.Enabled = true;
                 txtPersonelID2.Text = lvPersoneller.SelectedItems[0].SubItems[0].Text;
@@ -274,7 +274,7 @@ namespace CafeOtomasyonu.MENU
             {
                 btnSil.Enabled = false;
             }
-      
+
 
         }
 

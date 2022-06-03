@@ -96,7 +96,7 @@ namespace CafeOtomasyonu
         {
             lv.Items.Clear();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("Select PERSONELLER.*,PERSONELGOREVLERI.GOREV  from PERSONELLER inner join PERSONELGOREVLERI on PERSONELGOREVLERI.ID= PERSONELLER.GOREVID where PERSONELLER.DURUM=0)", con);
+            SqlCommand cmd = new SqlCommand("Select PERSONELLER.*,PERSONELGOREVLERI.GOREV  from PERSONELLER inner join PERSONELGOREVLERI on PERSONELGOREVLERI.ID= PERSONELLER.GOREVID where PERSONELLER.DURUM=0", con);
 
             if (con.State == ConnectionState.Closed)
             {
@@ -123,7 +123,7 @@ namespace CafeOtomasyonu
         {
             lv.Items.Clear();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("Select PERSONELLER.*,PERSONELGOREVLERI.GOREV  from PERSONELLER inner join PERSONELGOREVLERI on PERSONELGOREVLERI.ID= PERSONELLER.GOREVID where PERSONELLER.DURUM=0 and PERSONELLER.ID=@perId)", con);
+            SqlCommand cmd = new SqlCommand("Select PERSONELLER.*,PERSONELGOREVLERI.GOREV  from PERSONELLER inner join PERSONELGOREVLERI on PERSONELGOREVLERI.ID= PERSONELLER.GOREVID where PERSONELLER.DURUM=0 and PERSONELLER.ID=@perId", con);
             cmd.Parameters.Add("perId", SqlDbType.Int).Value = perId;
 
             if (con.State == ConnectionState.Closed)
@@ -152,7 +152,7 @@ namespace CafeOtomasyonu
         {
             string sonuc = "";
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("Select AD + SOYAD from PERSONELLER where PERSONELLER.DURUM=0 and PERSONELLER.ID=@perId)", con);
+            SqlCommand cmd = new SqlCommand("Select (AD + SOYAD) from PERSONELLER where PERSONELLER.DURUM=0 and PERSONELLER.ID=@perId", con);
             cmd.Parameters.Add("perId", SqlDbType.Int).Value = perId;
 
 
@@ -179,7 +179,7 @@ namespace CafeOtomasyonu
         {
             bool sonuc = false;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update PERSONELLER set PAROLA=@pass where ID=perId)", con);
+            SqlCommand cmd = new SqlCommand("update PERSONELLER set PAROLA=@pass where ID=@perId", con);
 
             cmd.Parameters.Add("perId", SqlDbType.Int).Value = personelID;
             cmd.Parameters.Add("pass", SqlDbType.VarChar).Value = pass;
@@ -233,7 +233,7 @@ namespace CafeOtomasyonu
         {
             bool sonuc = false;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update PERSONELLER set (AD=@AD,SOYAD=@SOYAD,PAROLA=@PAROLA,GOREVID=@GOREVID) where ID=perID)", con);
+            SqlCommand cmd = new SqlCommand("update PERSONELLER set (AD=@AD,SOYAD=@SOYAD,PAROLA=@PAROLA,GOREVID=@GOREVID) where ID=@perID", con);
 
             cmd.Parameters.Add("perID", SqlDbType.Int).Value = perId;
             cmd.Parameters.Add("AD", SqlDbType.VarChar).Value = _PersonelAd;
@@ -260,9 +260,10 @@ namespace CafeOtomasyonu
         }
         public bool personelSil(int perId)
         {
+
             bool sonuc = false;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update PERSONELLER set DURUM=1 where ID=perID)", con);
+            SqlCommand cmd = new SqlCommand("update PERSONELLER set DURUM=1 where ID=@perID", con);
 
             cmd.Parameters.Add("perID", SqlDbType.Int).Value = perId;
 
@@ -273,6 +274,7 @@ namespace CafeOtomasyonu
                     con.Open();
                 }
                 sonuc = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                
             }
             catch (SqlException ex)
             {

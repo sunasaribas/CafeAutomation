@@ -155,6 +155,7 @@ namespace CafeOtomasyonu
             this.btnYeniMusteri.Size = new System.Drawing.Size(147, 128);
             this.btnYeniMusteri.TabIndex = 7;
             this.btnYeniMusteri.UseVisualStyleBackColor = true;
+            this.btnYeniMusteri.Click += new System.EventHandler(this.btnYeniMusteri_Click);
             // 
             // btnRezervasyonAc
             // 
@@ -176,6 +177,7 @@ namespace CafeOtomasyonu
             this.btnRezervasyonKontrol.Size = new System.Drawing.Size(147, 128);
             this.btnRezervasyonKontrol.TabIndex = 9;
             this.btnRezervasyonKontrol.UseVisualStyleBackColor = true;
+            this.btnRezervasyonKontrol.Click += new System.EventHandler(this.btnRezervasyonKontrol_Click);
             // 
             // btnMusteriGuncelle
             // 
@@ -186,6 +188,7 @@ namespace CafeOtomasyonu
             this.btnMusteriGuncelle.Size = new System.Drawing.Size(151, 128);
             this.btnMusteriGuncelle.TabIndex = 10;
             this.btnMusteriGuncelle.UseVisualStyleBackColor = true;
+            this.btnMusteriGuncelle.Click += new System.EventHandler(this.btnMusteriGuncelle_Click);
             // 
             // btnKapat
             // 
@@ -197,6 +200,7 @@ namespace CafeOtomasyonu
             this.btnKapat.Size = new System.Drawing.Size(147, 128);
             this.btnKapat.TabIndex = 11;
             this.btnKapat.UseVisualStyleBackColor = false;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // label8
             // 
@@ -251,6 +255,7 @@ namespace CafeOtomasyonu
             // txtAciklama
             // 
             this.txtAciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAciklama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAciklama.Location = new System.Drawing.Point(139, 172);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
@@ -266,6 +271,8 @@ namespace CafeOtomasyonu
             this.cbMasa.Size = new System.Drawing.Size(18, 33);
             this.cbMasa.TabIndex = 19;
             this.cbMasa.SelectedIndexChanged += new System.EventHandler(this.cbMasa_SelectedIndexChanged);
+            this.cbMasa.MouseEnter += new System.EventHandler(this.cbMasa_MouseEnter);
+            this.cbMasa.MouseLeave += new System.EventHandler(this.cbMasa_MouseLeave);
             // 
             // cbKisiSayisi
             // 
@@ -277,6 +284,8 @@ namespace CafeOtomasyonu
             this.cbKisiSayisi.Size = new System.Drawing.Size(18, 33);
             this.cbKisiSayisi.TabIndex = 20;
             this.cbKisiSayisi.SelectedIndexChanged += new System.EventHandler(this.cbKisiSayisi_SelectedIndexChanged);
+            this.cbKisiSayisi.MouseEnter += new System.EventHandler(this.cbKisiSayisi_MouseEnter);
+            this.cbKisiSayisi.MouseLeave += new System.EventHandler(this.cbKisiSayisi_MouseLeave);
             // 
             // txtMasaNo
             // 
@@ -291,7 +300,7 @@ namespace CafeOtomasyonu
             // txtTarih
             // 
             this.txtTarih.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtTarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTarih.Location = new System.Drawing.Point(139, 52);
             this.txtTarih.Multiline = true;
             this.txtTarih.Name = "txtTarih";
@@ -301,7 +310,7 @@ namespace CafeOtomasyonu
             // txtMasa
             // 
             this.txtMasa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtMasa.Location = new System.Drawing.Point(138, 88);
             this.txtMasa.Multiline = true;
             this.txtMasa.Name = "txtMasa";
@@ -311,7 +320,7 @@ namespace CafeOtomasyonu
             // txtKisiSayisi
             // 
             this.txtKisiSayisi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtKisiSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtKisiSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtKisiSayisi.Location = new System.Drawing.Point(138, 131);
             this.txtKisiSayisi.Multiline = true;
             this.txtKisiSayisi.Name = "txtKisiSayisi";
@@ -450,6 +459,7 @@ namespace CafeOtomasyonu
             this.BackgroundImage = global::CafeAutomation.Properties.Resources.ARKAPLAN;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(952, 539);
+            this.Controls.Add(this.cbMasa);
             this.Controls.Add(this.dtTarih);
             this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.btnGeriDon);
@@ -462,7 +472,6 @@ namespace CafeOtomasyonu
             this.Controls.Add(this.txtTarih);
             this.Controls.Add(this.txtMasaNo);
             this.Controls.Add(this.cbKisiSayisi);
-            this.Controls.Add(this.cbMasa);
             this.Controls.Add(this.txtAciklama);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);

@@ -241,14 +241,15 @@ namespace CafeOtomasyonu
                 }
                 else if (masa.TableGetbyState(tableId, 3) == true)
                 {
-                    
+                    /*
                     newAddition.ServisTurNo = 1;
                     newAddition.PersonelId = 1;
                     newAddition.MasaId = tableId;
                     newAddition.Tarih = DateTime.Now;
                     sonuc = newAddition.setByAdditionNew(newAddition);
-                    masa.setChangeTableState(cGenel._ButtonName, 4);
+                     */
 
+                    masa.setChangeTableState(cGenel._ButtonName, 4);
                     if (lvSiparisler.Items.Count > 0)
                     {
                         for (int i = 0; i < lvSiparisler.Items.Count; i++)

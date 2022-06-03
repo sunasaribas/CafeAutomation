@@ -270,7 +270,8 @@ namespace CafeOtomasyonu.Classes
                 cmd.Parameters.Add("@Tarih", SqlDbType.DateTime).Value = bilgiler.Tarih;
                 cmd.Parameters.Add("@PersonelID", SqlDbType.Int).Value = bilgiler.PersonelId;
                 cmd.Parameters.Add("@MasaId", SqlDbType.Int).Value = bilgiler.MasaId;
-                sonuc = Convert.ToInt32(cmd.ExecuteNonQuery());
+
+                sonuc = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (SqlException ex)
             {
