@@ -9,10 +9,8 @@ namespace CafeOtomasyonu.Classes
 {
     class cAdisyon
 
-
     {
         cGenel gnl = new cGenel();
-
 
         #region Fields
         private int _ID;
@@ -102,8 +100,8 @@ namespace CafeOtomasyonu.Classes
                 {
                     con.Open();
                 }
-                cmd.Parameters.Add("adisyonId", SqlDbType.Int).Value = adisyonID;
-                cmd.Parameters.Add("durum", SqlDbType.Int).Value = durum;
+                cmd.Parameters.Add("@adisyonId", SqlDbType.Int).Value = adisyonID;
+                cmd.Parameters.Add("@durum", SqlDbType.Int).Value = durum;
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
@@ -219,7 +217,7 @@ namespace CafeOtomasyonu.Classes
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd = new SqlCommand("select PAKETSIPARIS.MUSTERIID,PAKETSIPARIS.ADISYONID,MUSTERILER.AD,MUSTERILER.SOYAD,CONVERT(varchar(10),ADISYON.TARIH,104) as tarih from ADISYON inner join PAKETSIPARIS on PAKETSIPARIS.ADISYONID=ADISYON.ID inner join MUSTERILER on MUSTERILER.ID=PAKETSIPARIS.MUSTERIID where ADISYON.SERVISTURNO=2  and PAKETSIPARIS.MUSTERIID=@musteriId", con);
 
-            cmd.Parameters.Add("musteriId", SqlDbType.Int).Value = musteriId;
+            cmd.Parameters.Add("@musteriId", SqlDbType.Int).Value = musteriId;
             SqlDataReader dr = null;
             try
             {

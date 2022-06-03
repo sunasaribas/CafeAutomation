@@ -27,7 +27,6 @@ namespace CafeOtomasyonu.Classes
         public string Email { get => _email; set => _email = value; }
         #endregion
 
-
         public bool MusteriVarmi(string tlf)
         {
             bool sonuc = false;
@@ -131,7 +130,6 @@ namespace CafeOtomasyonu.Classes
 
             return sonuc;
         }
-
         public void musterileriGetir(ListView lv)
         {
             lv.Items.Clear();
@@ -180,7 +178,7 @@ namespace CafeOtomasyonu.Classes
             SqlCommand cmd = new SqlCommand("select * from MUSTERILER where ID=@musteriID", con);
 
             SqlDataReader dr = null;
-            cmd.Parameters.Add("musteriID", SqlDbType.Int).Value = musteriId;
+            cmd.Parameters.Add("@musteriID", SqlDbType.Int).Value = musteriId;
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -219,7 +217,7 @@ namespace CafeOtomasyonu.Classes
             SqlCommand cmd = new SqlCommand("select * from MUSTERILER where AD like @musteriAd + '%'", con);
 
             SqlDataReader dr = null;
-            cmd.Parameters.Add("musteriAd", SqlDbType.VarChar).Value = musteriAd;
+            cmd.Parameters.Add("@musteriAd", SqlDbType.VarChar).Value = musteriAd;
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -262,7 +260,7 @@ namespace CafeOtomasyonu.Classes
             SqlCommand cmd = new SqlCommand("select * from MUSTERILER where SOYAD like @musterisoyad + '%'", con);
 
             SqlDataReader dr = null;
-            cmd.Parameters.Add("musterisoyad", SqlDbType.VarChar).Value = musterisoyad;
+            cmd.Parameters.Add("@musterisoyad", SqlDbType.VarChar).Value = musterisoyad;
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -305,7 +303,7 @@ namespace CafeOtomasyonu.Classes
             SqlCommand cmd = new SqlCommand("select * from MUSTERILER where TELEFON like @tlf + '%'", con);
 
             SqlDataReader dr = null;
-            cmd.Parameters.Add("tlf", SqlDbType.VarChar).Value = tlf;
+            cmd.Parameters.Add("@tlf", SqlDbType.VarChar).Value = tlf;
             try
             {
                 if (con.State == ConnectionState.Closed)

@@ -44,7 +44,7 @@ namespace CafeOtomasyonu.Classes
                 {
                     con.Open();
                 }
-                cmd.Parameters.Add("masaid", SqlDbType.Int).Value = tableId;
+                cmd.Parameters.Add("@masaid", SqlDbType.Int).Value = tableId;
                 clientId = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (SqlException ex)
@@ -74,7 +74,7 @@ namespace CafeOtomasyonu.Classes
                 {
                     con.Open();
                 }
-                cmd.Parameters.Add("adisyonId", SqlDbType.Int).Value = adisyonID;
+                cmd.Parameters.Add("@adisyonId", SqlDbType.Int).Value = adisyonID;
                 result = Convert.ToBoolean(cmd.ExecuteScalar());
             }
             catch (SqlException ex)
@@ -153,7 +153,7 @@ namespace CafeOtomasyonu.Classes
             SqlConnection conn = new SqlConnection(gnl.conString);
             SqlCommand comm = new SqlCommand("select TARIH FROM REZERVASYONLAR WHERE REZERVASYONLAR.MUSTERIID=@mId and REZERVASYONLAR.DURUM=1 order by REZERVASYONLAR.ID DESC", conn);
 
-            comm.Parameters.Add("mId", SqlDbType.Int).Value = mId;
+            comm.Parameters.Add("@mId", SqlDbType.Int).Value = mId;
 
             if (conn.State == ConnectionState.Closed)
             {

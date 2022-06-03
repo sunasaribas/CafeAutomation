@@ -58,7 +58,7 @@ namespace CafeOtomasyonu.Classes
             string sonuc = "";
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd = new SqlCommand("select GOREV from PERSONELGOREVLERI where ID=@perId", con);
-            cmd.Parameters.Add("perId", SqlDbType.Int).Value = per;
+            cmd.Parameters.Add("@perId", SqlDbType.Int).Value = per;
 
             try
             {
@@ -77,8 +77,6 @@ namespace CafeOtomasyonu.Classes
             con.Close();
             return sonuc;
         }
-
-        //overload ettik yapmasaydık yapsaydık ne olacakTı?
 
         public override string ToString()
         {

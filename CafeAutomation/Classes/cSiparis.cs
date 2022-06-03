@@ -18,6 +18,7 @@ namespace CafeOtomasyonu.Classes
         private int _urunId;
         private int _adet;
         private int _masaId;
+        private int _durum;
         #endregion
         #region Properties
         public int Id { get => _Id; set => _Id = value; }
@@ -25,6 +26,7 @@ namespace CafeOtomasyonu.Classes
         public int UrunId { get => _urunId; set => _urunId = value; }
         public int Adet { get => _adet; set => _adet = value; }
         public int MasaId { get => _masaId; set => _masaId = value; }
+        public int Durum { get => _durum; set => _durum = value; }
         #endregion
 
         //Siparisleri getir metod voidoldugu ıcın return kullanmadık
@@ -121,7 +123,7 @@ namespace CafeOtomasyonu.Classes
             //SqlCommand cmd = new SqlCommand("SELECT  SUM(dbo.SATISLAR.ADET * FIYAT) AS Fiyat FROM  dbo.MUSTERILER INNER JOIN dbo.PAKETSIPARIS ON dbo.MUSTERILER.ID = dbo.PAKETSIPARIS.MUSTERIID INNER JOIN ADISYON on ADISYON.ID=PAKETSIPARIS.ADISYONID inner join dbo.SATISLAR ON dbo.ADISYON.ID = dbo.SATISLAR.ADISYONID INNER JOIN dbo.URUNLER ON dbo.SATISLAR.URUNID = dbo.URUNLER.ID WHERE(dbo.PAKETSIPARIS.MUSTERIID = @musteriId) AND(dbo.PAKETSIPARIS.DURUM = 0)", con);
 
             SqlCommand cmd = new SqlCommand("select SUM(TOPLAMTUTAR) from HESAPODEMELERI where MUSTERIID=@musteriId)", con);
-            cmd.Parameters.Add("musteriId", SqlDbType.Int).Value = musteriId;
+            cmd.Parameters.Add("@musteriId", SqlDbType.Int).Value = musteriId;
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -149,9 +151,9 @@ namespace CafeOtomasyonu.Classes
             lv.Items.Clear();
             decimal geneltoplam = 0;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("Select SATISLAR.ID as satisID SATIS ID,URUNLER.URUNAD,URUNLER.FIYAT,SATISLAR.ADET from SATISLAR inner join ADISYON on ADISYON.ID=SATISLAR.ADISYONID inner join URUNLER on URUNLER.ID =SATISLAR.URUNID where SATISLAR.ADISYONID=@adisyonID)", con);
+            SqlCommand cmd = new SqlCommand("Select SATISLAR.ID as satisID,URUNLER.URUNAD,URUNLER.FIYAT,SATISLAR.ADET from SATISLAR inner join ADISYON on ADISYON.ID=SATISLAR.ADISYONID inner join URUNLER on URUNLER.ID =SATISLAR.URUNID where SATISLAR.ADISYONID=@adisyonID)", con);
 
-            cmd.Parameters.Add("adisyonID", SqlDbType.Int).Value = adisyonID;
+            cmd.Parameters.Add("@adisyonID", SqlDbType.Int).Value = adisyonID;
             SqlDataReader dr = null;
             try
             {

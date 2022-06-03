@@ -36,7 +36,7 @@ namespace CafeOtomasyonu.Classes
         {
             bool result = false;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("insert into HESAPODEMELERI(ADISYONID,ODEMETURID,MUSTERIID,ARATOPLAM,KDVTUTARI,TOPLAMTUTAR,INDIRIM) values (@ADISYONID,@ODEMETURID,@MUSTERIID,@ARATOPLAM,@KDVTUTARI,@TOPLAMTUTAR,@INDIRIM)", con);
+            SqlCommand cmd = new SqlCommand("insert into HESAPODEMELERI (ADISYONID,ODEMETURID,MUSTERIID,ARATOPLAM,KDVTUTARI,TOPLAMTUTAR,INDIRIM) values (@ADISYONID,@ODEMETURID,@MUSTERIID,@ARATOPLAM,@KDVTUTARI,@TOPLAMTUTAR,@INDIRIM)", con);
 
             try
             {
@@ -83,7 +83,7 @@ namespace CafeOtomasyonu.Classes
                 {
                     con.Open();
                 }
-                cmd.Parameters.Add("clientId", SqlDbType.Int).Value = clientId;
+                cmd.Parameters.Add("@clientId", SqlDbType.Int).Value = clientId;
                 total = Convert.ToDecimal(cmd.ExecuteScalar());
             }
             catch (SqlException ex)

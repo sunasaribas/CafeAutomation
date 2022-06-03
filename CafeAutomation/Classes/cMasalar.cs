@@ -29,7 +29,6 @@ namespace CafeOtomasyonu
 
         cGenel gnl = new cGenel();
         private string masaNo;
-
         public string SessionSum(int state)
         {
             //Ders 12

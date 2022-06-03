@@ -265,7 +265,7 @@ namespace CafeOtomasyonu.Classes
                     con.Open();
                 }
 
-                cmd.Parameters.Add("KATID", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@KATID", SqlDbType.Int).Value = id;
                 sonuc = Convert.ToInt32(cmd.ExecuteNonQuery());
 
             }
