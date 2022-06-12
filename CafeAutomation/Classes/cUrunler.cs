@@ -15,6 +15,7 @@ namespace CafeOtomasyonu.Classes
         private string _urunad;
         private decimal _fiyat;
         private string _aciklama;
+        private bool _durum;
         #endregion
         #region Properties
         public int Urunid { get => _urunid; set => _urunid = value; }
@@ -22,6 +23,7 @@ namespace CafeOtomasyonu.Classes
         public string Urunad { get => _urunad; set => _urunad = value; }
         public decimal Fiyat { get => _fiyat; set => _fiyat = value; }
         public string Aciklama { get => _aciklama; set => _aciklama = value; }
+        public bool Durum { get => _durum; set => _durum = value; }
         #endregion
         //ürün adına göre listeleme
         public void urunleriListeleByUrunAdi(ListView lv, string urunadi)
@@ -69,7 +71,7 @@ namespace CafeOtomasyonu.Classes
             int sonuc = 0;
 
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("insert into URUNLER (URUNAD,KATEGORIID,ACIKLAMA,FIYAT) values (@urunAd,@katId,@aciklama,@fiyat)", con);
+            SqlCommand cmd = new SqlCommand("insert into URUNLER (URUNAD,KATEGORIID,ACIKLAMA,FIYAT,DURUM) values (@urunAd,@katId,@aciklama,@fiyat,@durum)", con);
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -81,6 +83,7 @@ namespace CafeOtomasyonu.Classes
                 cmd.Parameters.Add("@katId", SqlDbType.Int).Value = u._urunturno;
                 cmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = u._aciklama;
                 cmd.Parameters.Add("@fiyat", SqlDbType.Money).Value = u._fiyat;
+                cmd.Parameters.Add("@durum", SqlDbType.Bit).Value = 0;
                 sonuc = Convert.ToInt32(cmd.ExecuteNonQuery());
 
             }
@@ -259,11 +262,11 @@ namespace CafeOtomasyonu.Classes
         {
             lv.Items.Clear();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select top 10 URUNLER.URUNAD,SUM(SATISLAR.ADET) as adeti from KATEGORILER inner join URUNLER on KATEGORILER.ID=URUNLER.KATEGORIID inner join SATISLAR on URUNLER.ID=SATISLAR.URUNID inner join ADISYON on SATISLAR.ADISYONID=ADISYON.ID where (CONVERT(datetime,TARIH,104) between convert (datetime,@Baslangic ,104) and Convert(datetime,@Bitis,104)) group by URUNLER.URUNAD order by adeti desc", con);
+            SqlCommand cmd = new SqlCommand("select top 10 URUNLER.URUNAD,SUM(SATISLAR.ADET) as adeti from KATEGORILER inner join URUNLER on KATEGORILER.ID=URUNLER.KATEGORIID inner join SATISLAR on URUNLER.ID=SATISLAR.URUNID inner join ADISYON on SATISLAR.ADISYONID=ADISYON.ID where (CONVERT(varchar,TARIH,104) between convert (varchar, @Baslangic ,104) and Convert(varchar,@Bitis,104)) group by URUNLER.URUNAD order by adeti desc", con);
 
             SqlDataReader dr = null;
-            cmd.Parameters.Add("@Baslangic", SqlDbType.VarChar).Value = Baslangic.Value.ToShortDateString();
-            cmd.Parameters.Add("@Bitis", SqlDbType.VarChar).Value = Bitis.Value.ToShortDateString(); ;
+            cmd.Parameters.Add("@Baslangic", SqlDbType.VarChar).Value = Baslangic.Value.ToString();
+            cmd.Parameters.Add("@Bitis", SqlDbType.VarChar).Value = Bitis.Value.ToString(); ;
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -297,11 +300,11 @@ namespace CafeOtomasyonu.Classes
         {
             lv.Items.Clear();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select top 10 URUNLER.URUNAD,SUM(SATISLAR.ADET) as adeti from KATEGORILER inner join URUNLER on KATEGORILER.ID=URUNLER.KATEGORIID inner join SATISLAR on URUNLER.ID=SATISLAR.URUNID inner join ADISYON on SATISLAR.ADISYONID=ADISYON.ID where (CONVERT(datetime,TARIH,104) between convert (datetime,@Baslangic ,104) and Convert(datetime,@Bitis,104)) and(URUNLER.KATEGORIID=@katId) group by URUNLER.URUNAD order by adeti desc", con);
+            SqlCommand cmd = new SqlCommand("select top 10 URUNLER.URUNAD,SUM(SATISLAR.ADET) as adeti from KATEGORILER inner join URUNLER on KATEGORILER.ID=URUNLER.KATEGORIID inner join SATISLAR on URUNLER.ID=SATISLAR.URUNID inner join ADISYON on SATISLAR.ADISYONID=ADISYON.ID where (CONVERT(varchar,TARIH,104) between convert (varchar,@Baslangic ,104) and Convert(varchar,@Bitis,104)) and(URUNLER.KATEGORIID=@katId) group by URUNLER.URUNAD order by adeti desc", con);
 
             SqlDataReader dr = null;
-            cmd.Parameters.Add("@Baslangic", SqlDbType.VarChar).Value = Baslangic.Value.ToShortDateString();
-            cmd.Parameters.Add("@Bitis", SqlDbType.VarChar).Value = Bitis.Value.ToShortDateString();
+            cmd.Parameters.Add("@Baslangic", SqlDbType.VarChar).Value = Baslangic.Value.ToString();
+            cmd.Parameters.Add("@Bitis", SqlDbType.VarChar).Value = Bitis.Value.ToString();
             cmd.Parameters.Add("@katId", SqlDbType.Int).Value = urunkatId;
             try
             {

@@ -337,7 +337,6 @@ namespace CafeOtomasyonu.Classes
             }
 
         }
-
     }
 }
 

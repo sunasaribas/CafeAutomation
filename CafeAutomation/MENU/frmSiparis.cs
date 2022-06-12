@@ -214,57 +214,57 @@ namespace CafeOtomasyonu
                     this.Close();
                     frms.Show();
                 }
-                else if (masa.TableGetbyState(tableId, 2) == true || masa.TableGetbyState(tableId, 4) == true)
+            }
+            else if (masa.TableGetbyState(tableId, 2) == true || masa.TableGetbyState(tableId, 4) == true)
+            {
+
+                if (lvYeniEklenenler.Items.Count > 0)
                 {
-                    
-                    if (lvYeniEklenenler.Items.Count > 0)
+                    for (int i = 0; i < lvYeniEklenenler.Items.Count; i++)
                     {
-                        for (int i = 0; i < lvYeniEklenenler.Items.Count; i++)
-                        {
-                            saveOrder.MasaId = tableId;
-                            saveOrder.UrunId = Convert.ToInt32(lvYeniEklenenler.Items[i].SubItems[1].Text);
-                            saveOrder.AdisyonID = newAddition.getByAddition(tableId);
-                            saveOrder.Adet = Convert.ToInt32(lvYeniEklenenler.Items[i].SubItems[2].Text);
-                            saveOrder.setSaveOrder(saveOrder);
-                        }
-                      
+                        saveOrder.MasaId = tableId;
+                        saveOrder.UrunId = Convert.ToInt32(lvYeniEklenenler.Items[i].SubItems[1].Text);
+                        saveOrder.AdisyonID = newAddition.getByAddition(tableId);
+                        saveOrder.Adet = Convert.ToInt32(lvYeniEklenenler.Items[i].SubItems[2].Text);
+                        saveOrder.setSaveOrder(saveOrder);
                     }
-                    if (silinenler.Count > 0)
+
+                }
+                if (silinenler.Count > 0)
+                {
+                    foreach (string item in silinenler)
                     {
-                        foreach (string item in silinenler)
-                        {
-                            saveOrder.setDeleteOrder(Convert.ToInt32(item));
-                        }
+                        saveOrder.setDeleteOrder(Convert.ToInt32(item));
+                    }
+                }
+                this.Close();
+                frms.Show();
+            }
+            else if (masa.TableGetbyState(tableId, 3) == true)
+            {
+                /*
+                newAddition.ServisTurNo = 1;
+                newAddition.PersonelId = 1;
+                newAddition.MasaId = tableId;
+                newAddition.Tarih = DateTime.Now;
+                sonuc = newAddition.setByAdditionNew(newAddition);
+                 */
+
+                masa.setChangeTableState(cGenel._ButtonName, 4);
+                if (lvSiparisler.Items.Count > 0)
+                {
+                    for (int i = 0; i < lvSiparisler.Items.Count; i++)
+                    {
+                        saveOrder.MasaId = tableId;
+                        saveOrder.UrunId = Convert.ToInt32(lvSiparisler.Items[i].SubItems[2].Text);
+                        saveOrder.AdisyonID = newAddition.getByAddition(tableId);
+                        saveOrder.Adet = Convert.ToInt32(lvSiparisler.Items[i].SubItems[1].Text);
+                        saveOrder.setSaveOrder(saveOrder);
                     }
                     this.Close();
                     frms.Show();
                 }
-                else if (masa.TableGetbyState(tableId, 3) == true)
-                {
-                    /*
-                    newAddition.ServisTurNo = 1;
-                    newAddition.PersonelId = 1;
-                    newAddition.MasaId = tableId;
-                    newAddition.Tarih = DateTime.Now;
-                    sonuc = newAddition.setByAdditionNew(newAddition);
-                     */
 
-                    masa.setChangeTableState(cGenel._ButtonName, 4);
-                    if (lvSiparisler.Items.Count > 0)
-                    {
-                        for (int i = 0; i < lvSiparisler.Items.Count; i++)
-                        {
-                            saveOrder.MasaId = tableId;
-                            saveOrder.UrunId = Convert.ToInt32(lvSiparisler.Items[i].SubItems[2].Text);
-                            saveOrder.AdisyonID = newAddition.getByAddition(tableId);
-                            saveOrder.Adet = Convert.ToInt32(lvSiparisler.Items[i].SubItems[1].Text);
-                            saveOrder.setSaveOrder(saveOrder);
-                        }
-                        this.Close();
-                        frms.Show();
-                    }
-
-                }
             }
         }
 
@@ -289,8 +289,8 @@ namespace CafeOtomasyonu
 
                 lvYeniEklenenler.Items.Add(AdditionId.ToString());
                 lvYeniEklenenler.Items[sayac2].SubItems.Add(lvMenu.SelectedItems[0].SubItems[2].Text);
-                lvYeniEklenenler.Items[sayac].SubItems.Add(txtAdet.Text);
-                lvYeniEklenenler.Items[sayac].SubItems.Add(tableId.ToString());
+                lvYeniEklenenler.Items[sayac2].SubItems.Add(txtAdet.Text);
+                lvYeniEklenenler.Items[sayac2].SubItems.Add(tableId.ToString());
                 lvYeniEklenenler.Items[sayac2].SubItems.Add(sayac2.ToString());
 
                 sayac2++;

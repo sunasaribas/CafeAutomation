@@ -126,17 +126,17 @@ namespace CafeOtomasyonu
             string aa = ButonName;
             int uzunluk = aa.Length;
 
-            cmd.Parameters.Add("@Durum", SqlDbType.Int).Value = state;
-            cmd.Parameters.Add("@MasaNo", SqlDbType.Int).Value = aa.Substring(uzunluk - 1, 1);
-
             if (uzunluk > 8)
             {
                 masaNo = aa.Substring(uzunluk - 2, 2);
             }
             else
             {
-                masaNo = aa.Substring(uzunluk - 2, 1);
+                masaNo = aa.Substring(uzunluk - 1, 1);
             }
+
+            cmd.Parameters.Add("@Durum", SqlDbType.Int).Value = state;
+            cmd.Parameters.Add("@MasaNo", SqlDbType.Int).Value = masaNo;          
 
 
             cmd.ExecuteNonQuery();

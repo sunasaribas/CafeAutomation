@@ -241,6 +241,7 @@ namespace CafeOtomasyonu.MENU
             this.txtMusteriNo.Name = "txtMusteriNo";
             this.txtMusteriNo.Size = new System.Drawing.Size(12, 26);
             this.txtMusteriNo.TabIndex = 15;
+            this.txtMusteriNo.Visible = false;
             // 
             // label6
             // 

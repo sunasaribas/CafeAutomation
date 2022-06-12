@@ -62,5 +62,10 @@ namespace CafeOtomasyonu
                 Application.Exit();
             }
         }
+
+        private void txtSifre_Enter(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

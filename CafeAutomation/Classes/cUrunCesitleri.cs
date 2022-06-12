@@ -257,7 +257,7 @@ namespace CafeOtomasyonu.Classes
             int sonuc = 0;
 
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("Update KATEGORILER set DURUM=1 where ID=@KATID", con);
+            SqlCommand cmd = new SqlCommand("Delete from KATEGORILER where ID=@KATID", con);
             try
             {
                 if (con.State == ConnectionState.Closed)

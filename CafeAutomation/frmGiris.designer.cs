@@ -41,16 +41,16 @@ namespace CafeOtomasyonu
             // 
             this.txtSifre.BackColor = System.Drawing.SystemColors.Control;
             this.txtSifre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtSifre.Location = new System.Drawing.Point(432, 290);
             this.txtSifre.Multiline = true;
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.PasswordChar = '*';
-           
             this.txtSifre.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtSifre.Size = new System.Drawing.Size(250, 35);
             this.txtSifre.TabIndex = 0;
             this.txtSifre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSifre.Enter += new System.EventHandler(this.txtSifre_Enter);
             // 
             // cbKullanici
             // 
@@ -58,7 +58,7 @@ namespace CafeOtomasyonu
             this.cbKullanici.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbKullanici.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKullanici.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.cbKullanici.FormattingEnabled = true;
             this.cbKullanici.Location = new System.Drawing.Point(432, 250);
             this.cbKullanici.Name = "cbKullanici";
@@ -120,7 +120,7 @@ namespace CafeOtomasyonu
             this.Controls.Add(this.cbKullanici);
             this.Controls.Add(this.txtSifre);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGiris";

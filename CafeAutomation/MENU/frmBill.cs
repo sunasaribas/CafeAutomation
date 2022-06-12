@@ -55,9 +55,16 @@ namespace CafeOtomasyonu.MENU
                 }
               
                 if (chkIndirim.Checked)
+                {
                     gbIndirim.Visible = true;
+                    txtIndirim.Visible = true;
+                }                   
                 else
+                {
                     gbIndirim.Visible = false;
+                    txtIndirim.Visible = false;
+                }
+                    
                 txtIndirim.Clear();
             }
             else if (cGenel._ServisTurNo == 2)
@@ -133,11 +140,13 @@ namespace CafeOtomasyonu.MENU
             if (chkIndirim.Checked)
             {
                 gbIndirim.Visible = true;
+                txtIndirim.Visible = true;
                 txtIndirim.Clear();
             }
             else
             {
                 gbIndirim.Visible = false;
+                txtIndirim.Visible = false;
                 txtIndirim.Clear();
             }
         }
@@ -200,7 +209,7 @@ namespace CafeOtomasyonu.MENU
                 if (result)
                 {
                     MessageBox.Show("Hesap kapatılmıştır!");
-                    masalar.setChangeTableState(Convert.ToString(masaid), 1);
+                    masalar.setChangeTableState(Convert.ToString(cGenel._ButtonName), 1);
 
                     cRezervasyon c = new cRezervasyon();
                     c.rezervationclose(Convert.ToInt32(lblAdisyonId.Text));
@@ -290,9 +299,5 @@ namespace CafeOtomasyonu.MENU
 
         }
 
-        private void lblAdisyonId_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -51,8 +51,8 @@ namespace CafeOtomasyonu.MENU
                 chRapor.Series["Satislar"].Points.Clear();
                 for (int i = 0; i < lvIstatistik.Items.Count; i++)
                 {
-                    chRapor.Series["Satislar"].Points.AddXY(lvIstatistik.Items[i].SubItems[0].Text);
-                    chRapor.Series["Satislar"].Points.AddXY(lvIstatistik.Items[i].SubItems[1].Text);
+                    chRapor.Series["Satislar"].Points.AddXY(lvIstatistik.Items[i].SubItems[0].Text, lvIstatistik.Items[i].SubItems[1].Text);
+                    //chRapor.Series["Satislar"].Points.AddXY(lvIstatistik.Items[i].SubItems[1].Text);
                 }
             }
             else
@@ -109,14 +109,19 @@ namespace CafeOtomasyonu.MENU
                 chRapor.Series["Satislar"].Points.Clear();
                 for (int i = 0; i < lvIstatistik.Items.Count; i++)
                 {
-                    chRapor.Series["Satislar"].Points.AddXY(lvIstatistik.Items[i].SubItems[0].Text);
-                    chRapor.Series["Satislar"].Points.AddXY(lvIstatistik.Items[i].SubItems[1].Text);
+                    chRapor.Series["Satislar"].Points.AddXY(lvIstatistik.Items[i].SubItems[0].Text, lvIstatistik.Items[i].SubItems[1].Text);
+                   // chRapor.Series["Satislar"].Points.AddXY(lvIstatistik.Items[i].SubItems[1].Text);
                 }
             }
             else
             {
                 MessageBox.Show("Gösterilecek istatistik yok, farklı bir zaman dilimi seçiniz.");
             }
+        }
+
+        private void gbIstatistik_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

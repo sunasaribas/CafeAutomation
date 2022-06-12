@@ -106,6 +106,7 @@ namespace CafeOtomasyonu.MENU
             // columnHeader1
             // 
             this.columnHeader1.Text = "Ürün Adı";
+            this.columnHeader1.Width = 96;
             // 
             // columnHeader2
             // 
@@ -114,6 +115,7 @@ namespace CafeOtomasyonu.MENU
             // columnHeader3
             // 
             this.columnHeader3.Text = "UrunId";
+            this.columnHeader3.Width = 35;
             // 
             // columnHeader4
             // 
@@ -454,7 +456,6 @@ namespace CafeOtomasyonu.MENU
             this.lblAdisyonId.Size = new System.Drawing.Size(29, 24);
             this.lblAdisyonId.TabIndex = 15;
             this.lblAdisyonId.Text = "ID";
-            this.lblAdisyonId.Click += new System.EventHandler(this.lblAdisyonId_Click);
             // 
             // printDialog1
             // 

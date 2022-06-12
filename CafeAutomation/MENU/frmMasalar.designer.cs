@@ -272,8 +272,8 @@ namespace CafeOtomasyonu
             this.lblAcik.AutoSize = true;
             this.lblAcik.BackColor = System.Drawing.Color.Transparent;
             this.lblAcik.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblAcik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblAcik.Location = new System.Drawing.Point(810, 457);
+            this.lblAcik.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblAcik.Location = new System.Drawing.Point(810, 512);
             this.lblAcik.Name = "lblAcik";
             this.lblAcik.Size = new System.Drawing.Size(100, 16);
             this.lblAcik.TabIndex = 10;
@@ -284,8 +284,8 @@ namespace CafeOtomasyonu
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(810, 487);
+            this.label1.ForeColor = System.Drawing.Color.LightCoral;
+            this.label1.Location = new System.Drawing.Point(810, 541);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 11;
@@ -296,8 +296,8 @@ namespace CafeOtomasyonu
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label2.Location = new System.Drawing.Point(810, 508);
+            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.Location = new System.Drawing.Point(810, 484);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 13;
@@ -309,7 +309,7 @@ namespace CafeOtomasyonu
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(810, 530);
+            this.label3.Location = new System.Drawing.Point(810, 457);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 12;
@@ -317,11 +317,11 @@ namespace CafeOtomasyonu
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button1.BackColor = System.Drawing.Color.OrangeRed;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(790, 457);
+            this.button1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.button1.Location = new System.Drawing.Point(790, 512);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(15, 17);
             this.button1.TabIndex = 14;
@@ -329,11 +329,11 @@ namespace CafeOtomasyonu
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button2.BackColor = System.Drawing.Color.LightCoral;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.Color.MintCream;
-            this.button2.Location = new System.Drawing.Point(790, 484);
+            this.button2.Location = new System.Drawing.Point(790, 538);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(15, 17);
             this.button2.TabIndex = 15;
@@ -353,11 +353,11 @@ namespace CafeOtomasyonu
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.OrangeRed;
+            this.button4.BackColor = System.Drawing.Color.Yellow;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.ForeColor = System.Drawing.Color.MintCream;
-            this.button4.Location = new System.Drawing.Point(790, 506);
+            this.button4.ForeColor = System.Drawing.Color.Yellow;
+            this.button4.Location = new System.Drawing.Point(790, 482);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(15, 17);
             this.button4.TabIndex = 17;
@@ -369,7 +369,7 @@ namespace CafeOtomasyonu
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.ForeColor = System.Drawing.Color.MintCream;
-            this.button5.Location = new System.Drawing.Point(790, 529);
+            this.button5.Location = new System.Drawing.Point(790, 456);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(15, 17);
             this.button5.TabIndex = 18;

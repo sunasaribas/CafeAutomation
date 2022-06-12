@@ -32,6 +32,8 @@ namespace CafeOtomasyonu.MENU
 
         private void frmMutfak_Load(object sender, EventArgs e)
         {
+            rbAltKategori.Checked = true;
+            panelAnakategori.Visible = false;
             cUrunCesitleri Anakategori = new cUrunCesitleri();
             Anakategori.urunCesitleriniGetir(cbKategoriler);
             cbKategoriler.Items.Insert(0, "Tüm Kategoriler");
@@ -175,16 +177,6 @@ namespace CafeOtomasyonu.MENU
                 // cbKategoriler.SelectedIndex = Convert.ToInt32(txtUrunId.Text);
             }
         }
-        private void lvKategoriler_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvGidaListesi.SelectedItems.Count > 0)
-            {
-                txtKategoriAd.Text = lvKategoriler.SelectedItems[0].SubItems[1].Text;
-                txtKategoriID.Text = lvKategoriler.SelectedItems[0].SubItems[0].Text;
-                txtAciklama.Text = lvKategoriler.SelectedItems[0].SubItems[2].Text;
-                // cbKategoriler.SelectedIndex = Convert.ToInt32(txtUrunId.Text);
-            }
-        }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
@@ -217,16 +209,20 @@ namespace CafeOtomasyonu.MENU
             {
                 if (lvKategoriler.SelectedItems.Count > 0)
                 {
-                    if (MessageBox.Show("Ürün silmekte emin misiniz?.", "Dikkat,Bilgiler Silinecek", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show("Kategori silmekte emin misiniz?.", "Dikkat,Bilgiler Silinecek", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         cUrunCesitleri uc = new cUrunCesitleri();
                         int sonuc = uc.urunKategoriSil(Convert.ToInt32(txtKategoriID.Text));
                         if (sonuc != 0)
                         {
-                            MessageBox.Show("Ürün silinmiştir.");
+                            MessageBox.Show("Kategori silinmiştir.");
                             yenile();
 
                             Temizle();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bu kategoriye ait ürün bulunduğu için kategori silinememiştir.");
                         }
                     }
                 }
@@ -252,7 +248,7 @@ namespace CafeOtomasyonu.MENU
             else
             {
                 cUrunCesitleri uc = new cUrunCesitleri();
-                uc.urunCesitleriniGetir(lvKategoriler,txtArama.Text);
+                uc.urunCesitleriniGetir(lvKategoriler, txtArama.Text);
 
             }
         }
@@ -274,8 +270,9 @@ namespace CafeOtomasyonu.MENU
             lvGidaListesi.Visible = false;
             txtUrunId.Visible = false;
             yenile();
+            lvKategoriler.Visible = true;
             //cUrunCesitleri uc = new cUrunCesitleri();
-           // uc.urunCesitleriniGetir(lvKategoriler);
+            // uc.urunCesitleriniGetir(lvKategoriler);
         }
         private void yenile()
         {
@@ -286,7 +283,18 @@ namespace CafeOtomasyonu.MENU
             uc.urunCesitleriniGetir(lvKategoriler);
             cUrunler c = new cUrunler();
             c.urunleriListele(lvGidaListesi);
-            
+
+        }
+
+        private void lvKategoriler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvKategoriler.SelectedItems.Count > 0)
+            {
+                txtKategoriAd.Text = lvKategoriler.SelectedItems[0].SubItems[1].Text;
+                txtKategoriID.Text = lvKategoriler.SelectedItems[0].SubItems[0].Text;
+                txtAciklama.Text = lvKategoriler.SelectedItems[0].SubItems[2].Text;
+                // cbKategoriler.SelectedIndex = Convert.ToInt32(txtUrunId.Text);
+            }
         }
     }
 }

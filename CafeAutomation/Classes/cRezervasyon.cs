@@ -228,7 +228,7 @@ namespace CafeOtomasyonu.Classes
         {
             bool result = false;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("insert into REZERVASYONLAR (MUSTERIID,MASAID,ADISYONID,KISISAYISI,TARIH,ACIKLAMA,DURUM) VALUES (@MUSTERIID,@MASAID,@ADISYONID,@KISISAYISI,@TARIH,@ACIKLAMA,1)", con);
+            SqlCommand cmd = new SqlCommand("insert into REZERVASYONLAR (MUSTERIID,MASAID,ADISYONID,KISISAYISI,TARIH,ACIKLAMA,DURUM) VALUES (@MUSTERIID,@MASAID,@ADISYONID,@KISISAYISI,convert(datetime,@TARIH, 104),@ACIKLAMA,1)", con);
 
             try
             {

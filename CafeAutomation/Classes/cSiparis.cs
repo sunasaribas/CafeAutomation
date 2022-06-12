@@ -72,7 +72,7 @@ namespace CafeOtomasyonu.Classes
         {
             bool sonuc = false;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("insert into SATISLAR(ADISYONID,URUNID,ADET,MASAID) values (@AdisyonNo,@UrunId,@Adet,@masaId", con);
+            SqlCommand cmd = new SqlCommand("insert into SATISLAR(ADISYONID,URUNID,ADET,MASAID) values (@AdisyonNo,@UrunId,@Adet,@masaId)", con);
             try
             {
                 if (con.State == ConnectionState.Closed)

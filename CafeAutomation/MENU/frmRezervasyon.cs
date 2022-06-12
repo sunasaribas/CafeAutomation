@@ -93,11 +93,11 @@ namespace CafeOtomasyonu
                                 cAdisyon a = new cAdisyon();// once adısyon sonra rezervasyon acılıyor
                                 a.Tarih = Convert.ToDateTime(txtTarih.Text);
                                 a.ServisTurNo = 1;
-                                a.MasaId = Convert.ToInt32(txtMasa.Text);
+                                a.MasaId = Convert.ToInt32(txtMasaNo.Text);
                                 a.PersonelId = cGenel._personelId;
 
                                 r.ClientId = Convert.ToInt32(lvMusteriler.SelectedItems[0].SubItems[0].Text);
-                                r.TableId = Convert.ToInt32(txtMasa.Text); ;
+                                r.TableId = Convert.ToInt32(txtMasaNo.Text); ;
                                 r.Date = Convert.ToDateTime(txtTarih.Text);
                                 r.ClientCount = Convert.ToInt32(txtKisiSayisi.Text);
                                 r.Description = txtAciklama.Text;
@@ -203,7 +203,7 @@ namespace CafeOtomasyonu
 
         private void btnRezervasyonKontrol_Click(object sender, EventArgs e)
         {
-            frmSiparisKontrol frm = new frmSiparisKontrol();
+            frmMasalar frm = new frmMasalar();
             this.Close();
             frm.Show();
         }
@@ -213,7 +213,9 @@ namespace CafeOtomasyonu
             frmMusteriEkleme frm = new frmMusteriEkleme();
             cGenel._musteriEkleme = 0;
             frm.btnMusteriGuncelle.Visible = false ;
+            frm.label8.Visible = false;
             frm.btnYeniMusteri.Visible = true;
+         
             this.Close();
             frm.Show();
         }

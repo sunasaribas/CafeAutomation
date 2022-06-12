@@ -40,6 +40,8 @@ namespace CafeOtomasyonu.MENU
             m.label8.Visible = false;
             m.btnMusteriSec.Visible = false;
             m.btnYeniMusteri.Visible = true;
+            txtAdres.Visible = true;
+            label3.Visible = true;
 
 
             this.Close();
@@ -51,14 +53,10 @@ namespace CafeOtomasyonu.MENU
         {
             cMusteriler c = new cMusteriler();
             c.musterileriGetir(lvMusteriler);
+            txtAdres.Visible = false;
+            label3.Visible = false;
         }
 
-        private void btnMusteriSec_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
 
         private void btnMusteriGuncelle_Click(object sender, EventArgs e)
         {
@@ -122,5 +120,18 @@ namespace CafeOtomasyonu.MENU
             frmSiparisKontrol frm = new frmSiparisKontrol();
             frm.Show();
         }
+
+        private void txtSoyad_TextChanged(object sender, EventArgs e)
+        {
+            cMusteriler c = new cMusteriler();
+            c.musterigetirSoyad(lvMusteriler, txtSoyad.Text);
+        }
+
+        private void txtTelefon_TextChanged(object sender, EventArgs e)
+        {
+            cMusteriler c = new cMusteriler();
+            c.musterigetirTlf(lvMusteriler, txtTelefon.Text);
+        }
+
     }
 }

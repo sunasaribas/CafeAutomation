@@ -88,6 +88,8 @@ namespace CafeOtomasyonu.MENU
             this.lvKategoriler.TabIndex = 0;
             this.lvKategoriler.UseCompatibleStateImageBehavior = false;
             this.lvKategoriler.View = System.Windows.Forms.View.Details;
+            this.lvKategoriler.Visible = false;
+            this.lvKategoriler.SelectedIndexChanged += new System.EventHandler(this.lvKategoriler_SelectedIndexChanged);
             // 
             // columnHeader5
             // 
@@ -119,7 +121,7 @@ namespace CafeOtomasyonu.MENU
             this.lvGidaListesi.FullRowSelect = true;
             this.lvGidaListesi.GridLines = true;
             this.lvGidaListesi.HideSelection = false;
-            this.lvGidaListesi.Location = new System.Drawing.Point(281, 306);
+            this.lvGidaListesi.Location = new System.Drawing.Point(267, 306);
             this.lvGidaListesi.Name = "lvGidaListesi";
             this.lvGidaListesi.Size = new System.Drawing.Size(327, 196);
             this.lvGidaListesi.TabIndex = 1;
@@ -290,6 +292,7 @@ namespace CafeOtomasyonu.MENU
             this.txtUrunId.Name = "txtUrunId";
             this.txtUrunId.Size = new System.Drawing.Size(14, 20);
             this.txtUrunId.TabIndex = 7;
+            this.txtUrunId.Visible = false;
             // 
             // panelAnakategori
             // 
@@ -312,6 +315,7 @@ namespace CafeOtomasyonu.MENU
             this.txtKategoriID.Name = "txtKategoriID";
             this.txtKategoriID.Size = new System.Drawing.Size(14, 20);
             this.txtKategoriID.TabIndex = 8;
+            this.txtKategoriID.Visible = false;
             // 
             // txtAciklama
             // 
@@ -488,6 +492,7 @@ namespace CafeOtomasyonu.MENU
             this.BackgroundImage = global::CafeAutomation.Properties.Resources.ARKAPLAN;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(880, 550);
+            this.Controls.Add(this.lvGidaListesi);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -505,7 +510,6 @@ namespace CafeOtomasyonu.MENU
             this.Controls.Add(this.btnDegistir);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.lvKategoriler);
-            this.Controls.Add(this.lvGidaListesi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMutfak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

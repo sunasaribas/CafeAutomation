@@ -347,6 +347,7 @@ namespace CafeOtomasyonu.MENU
             this.gbIstatistik.Size = new System.Drawing.Size(628, 388);
             this.gbIstatistik.TabIndex = 5;
             this.gbIstatistik.TabStop = false;
+            this.gbIstatistik.Enter += new System.EventHandler(this.gbIstatistik_Enter);
             // 
             // lvIstatistik
             // 

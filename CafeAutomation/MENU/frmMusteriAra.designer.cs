@@ -48,7 +48,6 @@ namespace CafeOtomasyonu.MENU
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnYeniMusteri = new System.Windows.Forms.Button();
-            this.btnMusteriSec = new System.Windows.Forms.Button();
             this.btnMusteriGuncelle = new System.Windows.Forms.Button();
             this.btnAdisyonBul = new System.Windows.Forms.Button();
             this.btnSiparisler = new System.Windows.Forms.Button();
@@ -56,7 +55,6 @@ namespace CafeOtomasyonu.MENU
             this.btnCikis = new System.Windows.Forms.Button();
             this.btnGeriDon = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -91,6 +89,7 @@ namespace CafeOtomasyonu.MENU
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(149, 37);
             this.txtSoyad.TabIndex = 0;
+            this.txtSoyad.TextChanged += new System.EventHandler(this.txtSoyad_TextChanged);
             // 
             // label2
             // 
@@ -131,6 +130,7 @@ namespace CafeOtomasyonu.MENU
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(149, 37);
             this.txtTelefon.TabIndex = 0;
+            this.txtTelefon.TextChanged += new System.EventHandler(this.txtTelefon_TextChanged);
             // 
             // label4
             // 
@@ -221,24 +221,12 @@ namespace CafeOtomasyonu.MENU
             this.btnYeniMusteri.UseVisualStyleBackColor = true;
             this.btnYeniMusteri.Click += new System.EventHandler(this.btnYeniMusteri_Click);
             // 
-            // btnMusteriSec
-            // 
-            this.btnMusteriSec.BackgroundImage = global::CafeAutomation.Properties.Resources.pickclient;
-            this.btnMusteriSec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMusteriSec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMusteriSec.Location = new System.Drawing.Point(181, 345);
-            this.btnMusteriSec.Name = "btnMusteriSec";
-            this.btnMusteriSec.Size = new System.Drawing.Size(117, 108);
-            this.btnMusteriSec.TabIndex = 4;
-            this.btnMusteriSec.UseVisualStyleBackColor = true;
-            this.btnMusteriSec.Click += new System.EventHandler(this.btnMusteriSec_Click);
-            // 
             // btnMusteriGuncelle
             // 
             this.btnMusteriGuncelle.BackgroundImage = global::CafeAutomation.Properties.Resources.refreshclient;
             this.btnMusteriGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMusteriGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMusteriGuncelle.Location = new System.Drawing.Point(313, 345);
+            this.btnMusteriGuncelle.Location = new System.Drawing.Point(177, 345);
             this.btnMusteriGuncelle.Name = "btnMusteriGuncelle";
             this.btnMusteriGuncelle.Size = new System.Drawing.Size(117, 108);
             this.btnMusteriGuncelle.TabIndex = 5;
@@ -250,7 +238,7 @@ namespace CafeOtomasyonu.MENU
             this.btnAdisyonBul.BackgroundImage = global::CafeAutomation.Properties.Resources.findaddition;
             this.btnAdisyonBul.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdisyonBul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdisyonBul.Location = new System.Drawing.Point(592, 345);
+            this.btnAdisyonBul.Location = new System.Drawing.Point(456, 345);
             this.btnAdisyonBul.Name = "btnAdisyonBul";
             this.btnAdisyonBul.Size = new System.Drawing.Size(117, 108);
             this.btnAdisyonBul.TabIndex = 6;
@@ -262,7 +250,7 @@ namespace CafeOtomasyonu.MENU
             this.btnSiparisler.BackgroundImage = global::CafeAutomation.Properties.Resources.order;
             this.btnSiparisler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSiparisler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiparisler.Location = new System.Drawing.Point(452, 345);
+            this.btnSiparisler.Location = new System.Drawing.Point(316, 345);
             this.btnSiparisler.Name = "btnSiparisler";
             this.btnSiparisler.Size = new System.Drawing.Size(117, 108);
             this.btnSiparisler.TabIndex = 7;
@@ -274,7 +262,7 @@ namespace CafeOtomasyonu.MENU
             this.btnGeri.BackgroundImage = global::CafeAutomation.Properties.Resources.backpage;
             this.btnGeri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGeri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGeri.Location = new System.Drawing.Point(732, 345);
+            this.btnGeri.Location = new System.Drawing.Point(596, 345);
             this.btnGeri.Name = "btnGeri";
             this.btnGeri.Size = new System.Drawing.Size(117, 108);
             this.btnGeri.TabIndex = 8;
@@ -326,23 +314,12 @@ namespace CafeOtomasyonu.MENU
             this.label6.TabIndex = 12;
             this.label6.Text = "Yeni Müşteri";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label7.Location = new System.Drawing.Point(181, 456);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 24);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Müşteri Seç";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label8.Location = new System.Drawing.Point(323, 456);
+            this.label8.Location = new System.Drawing.Point(187, 456);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 24);
             this.label8.TabIndex = 14;
@@ -353,7 +330,7 @@ namespace CafeOtomasyonu.MENU
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label9.Location = new System.Drawing.Point(467, 456);
+            this.label9.Location = new System.Drawing.Point(331, 456);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 24);
             this.label9.TabIndex = 15;
@@ -364,7 +341,7 @@ namespace CafeOtomasyonu.MENU
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label10.Location = new System.Drawing.Point(599, 456);
+            this.label10.Location = new System.Drawing.Point(463, 456);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 24);
             this.label10.TabIndex = 16;
@@ -380,7 +357,6 @@ namespace CafeOtomasyonu.MENU
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.btnGeriDon);
@@ -388,7 +364,6 @@ namespace CafeOtomasyonu.MENU
             this.Controls.Add(this.btnSiparisler);
             this.Controls.Add(this.btnAdisyonBul);
             this.Controls.Add(this.btnMusteriGuncelle);
-            this.Controls.Add(this.btnMusteriSec);
             this.Controls.Add(this.btnYeniMusteri);
             this.Controls.Add(this.lvMusteriler);
             this.Controls.Add(this.label5);
@@ -440,10 +415,8 @@ namespace CafeOtomasyonu.MENU
         private System.Windows.Forms.Button btnCikis;
         private System.Windows.Forms.Button btnGeriDon;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        protected internal System.Windows.Forms.Button btnMusteriSec;
     }
 }
