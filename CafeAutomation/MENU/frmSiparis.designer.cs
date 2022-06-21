@@ -36,6 +36,12 @@ namespace CafeOtomasyonu
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.lvYeniEklenenler = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -80,12 +86,6 @@ namespace CafeOtomasyonu
             this.btnOdeme = new System.Windows.Forms.Button();
             this.btnSiparis = new System.Windows.Forms.Button();
             this.btnIptal = new System.Windows.Forms.Button();
-            this.lvYeniEklenenler = new System.Windows.Forms.ListView();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -183,6 +183,45 @@ namespace CafeOtomasyonu
             this.label10.TabIndex = 20;
             this.label10.Text = "Salatalar";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lvYeniEklenenler
+            // 
+            this.lvYeniEklenenler.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader14,
+            this.columnHeader13});
+            this.lvYeniEklenenler.FullRowSelect = true;
+            this.lvYeniEklenenler.GridLines = true;
+            this.lvYeniEklenenler.HideSelection = false;
+            this.lvYeniEklenenler.Location = new System.Drawing.Point(221, 489);
+            this.lvYeniEklenenler.Name = "lvYeniEklenenler";
+            this.lvYeniEklenenler.Size = new System.Drawing.Size(10, 14);
+            this.lvYeniEklenenler.TabIndex = 12;
+            this.lvYeniEklenenler.UseCompatibleStateImageBehavior = false;
+            this.lvYeniEklenenler.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "AdisyonId";
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "UrunId";
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Adet";
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "MasaId";
+            this.columnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "SilinenId";
             // 
             // label9
             // 
@@ -665,45 +704,7 @@ namespace CafeOtomasyonu
             this.btnIptal.Size = new System.Drawing.Size(96, 107);
             this.btnIptal.TabIndex = 0;
             this.btnIptal.UseVisualStyleBackColor = true;
-            // 
-            // lvYeniEklenenler
-            // 
-            this.lvYeniEklenenler.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader14,
-            this.columnHeader13});
-            this.lvYeniEklenenler.FullRowSelect = true;
-            this.lvYeniEklenenler.GridLines = true;
-            this.lvYeniEklenenler.HideSelection = false;
-            this.lvYeniEklenenler.Location = new System.Drawing.Point(221, 489);
-            this.lvYeniEklenenler.Name = "lvYeniEklenenler";
-            this.lvYeniEklenenler.Size = new System.Drawing.Size(10, 14);
-            this.lvYeniEklenenler.TabIndex = 12;
-            this.lvYeniEklenenler.UseCompatibleStateImageBehavior = false;
-            this.lvYeniEklenenler.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "AdisyonId";
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "UrunId";
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Adet";
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "MasaId";
-            this.columnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "SilinenId";
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // label2
             // 

@@ -186,16 +186,14 @@ namespace CafeOtomasyonu.MENU
                 {
                     if (MessageBox.Show("Ürün silmekte emin misiniz?.", "Dikkat,Bilgiler Silinecek", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        cUrunCesitleri uc = new cUrunCesitleri();
-                        int sonuc = uc.urunKategoriSil(Convert.ToInt32(txtKategoriAd.Text));
+                        cUrunler c = new cUrunler();
+                        c.Urunid = Convert.ToInt32(txtUrunId.Text);
+                        int sonuc= c.urunSil(c,0);
 
                         if (sonuc != 0)
                         {
                             MessageBox.Show("Ürün silinmiştir.");
-                            cUrunler c = new cUrunler();
-                            c.Urunid = Convert.ToInt32(txtKategoriID.Text);
-                            c.urunSil(c, 0);
-                            yenile();
+                            cbKategoriler_SelectedIndexChanged(sender, e);
                             Temizle();
                         }
                     }

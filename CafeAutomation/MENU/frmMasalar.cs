@@ -33,8 +33,7 @@ namespace CafeOtomasyonu
 
         private void btnMasa1_Click(object sender, EventArgs e)
         {
-            //frm adında bir nesne oluşturduk ve formu açtık. uzunluk adında bir değişken olusturduk.Bastığımız butonun textini alıp uzunlugunu hesaplattık
-            //Btn name aldık,masalar kısmın kapattık ve sipariş kısmını açtık
+     
             frmSiparis frm = new frmSiparis();
             int uzunluk = btnMasa1.Text.Length;
             cGenel._ButtonValue = btnMasa1.Text.Substring(uzunluk - 6, 6);
@@ -162,13 +161,12 @@ namespace CafeOtomasyonu
                     {   // Gelen masa 1 ve  durumu 1 ise 
                         if (item.Name=="btnMasa"+dr["ID"].ToString() && dr["DURUM"].ToString() =="1")
                         {
-                            item.BackgroundImage = (System.Drawing.Image)(CafeAutomation.Properties.Resources.acikmasa);
+                            item.BackgroundImage = (System.Drawing.Image)(CafeAutomation.Properties.Resources.emptyTable);
                         }
                         else if (item.Name == "btnMasa" + dr["ID"].ToString() && dr["DURUM"].ToString() == "2")
                         {
                             item.BackgroundImage = (System.Drawing.Image)(CafeAutomation.Properties.Resources.reservetable);
-                            //Ders12-163 -Şuanki zamanı ve oturualn zamanı alıp müşterilerin ne kadar oturdugunu hesapladık.
-
+                           
                             cMasalar ms = new cMasalar();
                             var returnedDate = ms.SessionSum(2);
                             if (!string.IsNullOrEmpty(returnedDate))
@@ -217,7 +215,7 @@ namespace CafeOtomasyonu
                         }
                         else if (item.Name == "btnMasa" + dr["ID"].ToString() && dr["DURUM"].ToString() == "4")
                         {
-                            item.BackgroundImage = (System.Drawing.Image)(CafeAutomation.Properties.Resources.emptyTable);
+                            item.BackgroundImage = (System.Drawing.Image)(CafeAutomation.Properties.Resources.acikmasa);
                         }
                     }
                 }

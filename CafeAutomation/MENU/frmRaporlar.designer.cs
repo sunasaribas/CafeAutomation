@@ -63,6 +63,7 @@ namespace CafeOtomasyonu.MENU
             this.btnCikis = new System.Windows.Forms.Button();
             this.btnGeriDon = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grpMenuBaslik.SuspendLayout();
             this.gbIstatistik.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chRapor)).BeginInit();
@@ -507,5 +508,6 @@ namespace CafeOtomasyonu.MENU
         private System.Windows.Forms.Button btnCikis;
         private System.Windows.Forms.Button btnGeriDon;
         private System.Windows.Forms.Label label3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

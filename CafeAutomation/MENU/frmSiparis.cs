@@ -299,7 +299,13 @@ namespace CafeOtomasyonu
             }
         }
 
-
+        private void btnIptal_Click(object sender, EventArgs e)
+        {
+            lvSiparisler.Items.Clear();
+            frmMasalar frm = new frmMasalar();
+            this.Close();
+            frm.Show();
+        }
 
         private void txtAra_TextChanged(object sender, EventArgs e)
         {
