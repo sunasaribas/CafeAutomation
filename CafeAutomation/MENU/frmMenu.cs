@@ -1,4 +1,5 @@
-﻿using CafeOtomasyonu.MENU;
+﻿using CafeOtomasyonu.Classes;
+using CafeOtomasyonu.MENU;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace CafeOtomasyonu
 
         private void btnPaketServis_Click(object sender, EventArgs e)
         {
-            frmSiparis frm = new frmSiparis();
+            frmSiparisKontrol frm = new frmSiparisKontrol();
             this.Hide();
             frm.Show();
         }
@@ -70,9 +71,21 @@ namespace CafeOtomasyonu
 
         private void btnAyarlar_Click(object sender, EventArgs e)
         {
-            frmSetting frm = new frmSetting();
-            this.Hide();
-            frm.Show();
+            cPersoneller cp = new cPersoneller();
+            cPersonelGorev cpg = new cPersonelGorev();
+            string gorev = cpg.PersonelGorevTanım(cGenel._gorevId);
+          
+            if (gorev == "Müdür")
+            {
+                frmSetting frm = new frmSetting();
+                frm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bu alana sadece müdür yetkisi ile girilebilmektedir, lütfen yetkililere bildiriniz.");
+            }
+
         }
 
         private void btnKilit_Click(object sender, EventArgs e)

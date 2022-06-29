@@ -294,8 +294,8 @@ namespace CafeOtomasyonu.MENU
             e.Graphics.DrawString("--------------------------------------------------------------------------", altBaslik, sb, 150, 300 + 30 * lvUrunler.Items.Count, st);
             e.Graphics.DrawString("İndirim Tutarı   :----------" + lblIndirim.Text + " TL", altBaslik, sb, 250, 300 + 30 * (lvUrunler.Items.Count + 1), st);
             e.Graphics.DrawString("KDV Tutarı       :----------" + lblKdv.Text + " TL", altBaslik, sb, 250, 300 + 30 * (lvUrunler.Items.Count + 2), st);
-            e.Graphics.DrawString("Toplam Tutar     :----------" + lblToplamTutar + " TL", altBaslik, sb, 250, 300 + 30 * (lvUrunler.Items.Count + 3), st);
-            e.Graphics.DrawString("Ödediğiniz Tutar :----------" + lblOdenecek + " TL", altBaslik, sb, 250, 300 + 30 * (lvUrunler.Items.Count + 4), st);
+            e.Graphics.DrawString("Toplam Tutar     :----------" + lblToplamTutar.Text + " TL", altBaslik, sb, 250, 300 + 30 * (lvUrunler.Items.Count + 3), st);
+            e.Graphics.DrawString("Ödediğiniz Tutar :----------" + lblOdenecek.Text + " TL", altBaslik, sb, 250, 300 + 30 * (lvUrunler.Items.Count + 4), st);
 
         }
 

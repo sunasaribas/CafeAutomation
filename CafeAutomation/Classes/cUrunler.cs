@@ -190,7 +190,7 @@ namespace CafeOtomasyonu.Classes
             }
             else
             {
-                sql += "ID=urunID";
+                sql += "ID=@urunID";
             }
 
             SqlCommand cmd = new SqlCommand(sql, con);

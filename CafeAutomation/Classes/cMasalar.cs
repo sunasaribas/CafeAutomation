@@ -31,7 +31,6 @@ namespace CafeOtomasyonu
         private string masaNo;
         public string SessionSum(int state)
         {
-            //Ders 12
             string dt = "";
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd = new SqlCommand("Select TARIH,MASAID from ADISYON Join MASALAR on ADISYON.MASAID=MASALAR.ID where MASALAR.DURUM =" + state + " and ADISYON.Durum = 0", con);
@@ -117,6 +116,7 @@ namespace CafeOtomasyonu
 
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd = new SqlCommand("update MASALAR set DURUM=@Durum where ID=@MasaNo", con);
+            
             string masaNo = "";
 
             if (con.State == ConnectionState.Closed)

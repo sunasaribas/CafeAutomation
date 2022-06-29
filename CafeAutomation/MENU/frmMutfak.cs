@@ -188,13 +188,17 @@ namespace CafeOtomasyonu.MENU
                     {
                         cUrunler c = new cUrunler();
                         c.Urunid = Convert.ToInt32(txtUrunId.Text);
-                        int sonuc= c.urunSil(c,0);
+                        int sonuc= c.urunSil(c, Convert.ToInt32(txtUrunId.Text));
 
                         if (sonuc != 0)
                         {
                             MessageBox.Show("Ürün silinmiştir.");
                             cbKategoriler_SelectedIndexChanged(sender, e);
                             Temizle();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ürün silinirken hata oluşmuştur, lütfen yetkili ile iletişime geçiniz.");
                         }
                     }
                 }

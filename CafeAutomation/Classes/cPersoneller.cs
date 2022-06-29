@@ -235,7 +235,7 @@ namespace CafeOtomasyonu
         {
             bool sonuc = false;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update PERSONELLER set (AD=@AD,SOYAD=@SOYAD,PAROLA=@PAROLA,GOREVID=@GOREVID) where ID=@perID", con);
+            SqlCommand cmd = new SqlCommand("update PERSONELLER set AD=@AD,SOYAD=@SOYAD,PAROLA=@PAROLA,GOREVID=@GOREVID where ID=@perID", con);
 
             cmd.Parameters.Add("@perID", SqlDbType.Int).Value = perId;
             cmd.Parameters.Add("@AD", SqlDbType.VarChar).Value = _PersonelAd;

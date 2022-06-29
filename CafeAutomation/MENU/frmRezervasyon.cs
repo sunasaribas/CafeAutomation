@@ -229,6 +229,7 @@ namespace CafeOtomasyonu
                 cGenel._musteriId = Convert.ToInt32((lvMusteriler.SelectedItems[0].SubItems[0].Text));
                 me.btnMusteriGuncelle.Visible = true;
                 me.btnYeniMusteri.Visible = false;
+                me.label6.Visible = false;
                 this.Close();
                 me.Show();
 

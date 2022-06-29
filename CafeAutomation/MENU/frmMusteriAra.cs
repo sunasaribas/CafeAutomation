@@ -77,48 +77,10 @@ namespace CafeOtomasyonu.MENU
             }
         }
 
-        private void btnGeri_Click(object sender, EventArgs e)
-        {
-            frmMenu frm = new frmMenu();
-            this.Close();
-            frm.Show();
-        }
-
         private void txtMusteriAd_TextChanged(object sender, EventArgs e)
         {
             cMusteriler c = new cMusteriler();
             c.musterigetirAd(lvMusteriler, txtMusteriAd.Text);
-        }
-
-        private void btnAdisyonBul_Click(object sender, EventArgs e)
-        {
-            if (txtAdisyonid.Text!="")
-            {
-                cGenel._AdisyonId = txtAdisyonid.Text;
-                cPaketler c = new cPaketler();
-                bool sonuc = c.getCheckOpenAdditionID(Convert.ToInt32(txtAdisyonid.Text));
-                if (sonuc)
-                {
-                    frmBill frm = new frmBill();
-                    cGenel._ServisTurNo = 2;
-                    frm.Show();
-                }
-                else
-                {
-                    MessageBox.Show(txtAdisyonid.Text +" Nolu adisyon bunuamadı.");
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Aramak istediğiniz Adisyonu Yazınız.");
-            }
-        }
-
-        private void btnSiparisler_Click(object sender, EventArgs e)
-        {
-            frmSiparisKontrol frm = new frmSiparisKontrol();
-            frm.Show();
         }
 
         private void txtSoyad_TextChanged(object sender, EventArgs e)
@@ -133,5 +95,43 @@ namespace CafeOtomasyonu.MENU
             c.musterigetirTlf(lvMusteriler, txtTelefon.Text);
         }
 
+        private void btnSiparisler_Click(object sender, EventArgs e)
+        {
+            frmSiparisKontrol frm = new frmSiparisKontrol();
+            frm.Show();
+            this.Close();
+        }
+
+        /* private void btnGeri_Click(object sender, EventArgs e)
+         {
+             frmMenu frm = new frmMenu();
+             this.Close();
+             frm.Show();
+         }*/
+
+        /* private void btnAdisyonBul_Click(object sender, EventArgs e)
+         {
+             if (txtAdisyonid.Text != "")
+             {
+                 cGenel._AdisyonId = txtAdisyonid.Text;
+                 cPaketler c = new cPaketler();
+                 bool sonuc = c.getCheckOpenAdditionID(Convert.ToInt32(txtAdisyonid.Text));
+                 if (sonuc)
+                 {
+                     frmBill frm = new frmBill();
+                     cGenel._ServisTurNo = 2;
+                     frm.Show();
+                 }
+                 else
+                 {
+                     MessageBox.Show(txtAdisyonid.Text + " Nolu adisyon bunuamadı.");
+                 }
+
+             }
+             else
+             {
+                 MessageBox.Show("Aramak istediğiniz Adisyonu Yazınız.");
+             }
+         }*/
     }
 }

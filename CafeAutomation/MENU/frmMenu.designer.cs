@@ -89,6 +89,7 @@ namespace CafeOtomasyonu
             this.btnPaketServis.Size = new System.Drawing.Size(99, 110);
             this.btnPaketServis.TabIndex = 0;
             this.btnPaketServis.UseVisualStyleBackColor = false;
+            this.btnPaketServis.Visible = false;
             this.btnPaketServis.Click += new System.EventHandler(this.btnPaketServis_Click);
             // 
             // btnMusteriler
@@ -301,6 +302,7 @@ namespace CafeOtomasyonu
             this.label10.TabIndex = 13;
             this.label10.Text = "Paket Sipariş";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Visible = false;
             // 
             // frmMenu
             // 

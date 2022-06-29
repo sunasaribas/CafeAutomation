@@ -81,7 +81,7 @@ namespace CafeOtomasyonu.MENU
             {
                 int s = lvMusteriDetaylari.Items.Count;
                 lblSonSiparisTarihi.Text = lvMusteriDetaylari.Items[s - 1].SubItems[3].Text;
-                txtToplamTutasr.Text = s + "Adet";
+                lblToplamSiparis.Text = s + "Adet";
             }
         }
         void toplam()

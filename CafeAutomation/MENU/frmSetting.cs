@@ -41,10 +41,7 @@ namespace CafeOtomasyonu.MENU
                 cp.personelGetbyInformation(cbPersonel);
                 cpg.PersonelGorevGetir(cbGorevi);
                 cp.personelBilgileriniGetirLV(lvPersoneller);
-                btnYeni.Enabled = true;
-                btnSil.Enabled = false;
-                btnBilgiDegistir.Enabled = false;
-                btnEkle.Enabled = false;
+               
                 groupBox1.Visible = true;
                 groupBox2.Visible = true;
                 groupBox3.Visible = false;
@@ -59,11 +56,12 @@ namespace CafeOtomasyonu.MENU
                 groupBox2.Visible = false;
                 groupBox3.Visible = true;
                 groupBox4.Visible = false;
-                lblBilgi.Text = "Mevki:Müdür / Yetki Sınırlı / Kullanıcı: " + cp.personelBilgiGetirIsim(cGenel._personelId);
+                lblBilgi.Text = "Mevki:Personel / Yetki Sınırlı / Kullanıcı: " + cp.personelBilgiGetirIsim(cGenel._personelId);
+                /*MessageBox.Show("Bu alana sadece müdür yetkisi ile girilebilmektedir, lütfen yetkililere bildiriniz.");
+                frmMenu frm = new frmMenu();
+                frm.Show();*/
             }
-            {
 
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -80,17 +78,18 @@ namespace CafeOtomasyonu.MENU
                         if (sonuc)
                         {
                             MessageBox.Show("Şifre değiştirme işlemi başarıyla gerçekleşmiştir!");
+                            txtYeniSifre.Clear();
+                            txtYeniSifreTekrar.Clear();
                         }
                     }
                     else
                     {
                         MessageBox.Show("Personel seçiniz!");
                     }
-
                 }
                 else
                 {
-                    MessageBox.Show("Şifreeler aynı değil,lütfen tekrar deneyiniz.");
+                    MessageBox.Show("Şifreler aynı değil,lütfen tekrar deneyiniz.");
 
                 }
             }
@@ -117,7 +116,7 @@ namespace CafeOtomasyonu.MENU
             btnYeni.Enabled = false;
             btnEkle.Enabled = true;
             btnBilgiDegistir.Enabled = false;
-            btnSil.Enabled = false;
+            btnSil.Enabled = true;
             txtSifre.ReadOnly = false;
             txtSifreTekrar.ReadOnly = false;
         }
@@ -129,7 +128,7 @@ namespace CafeOtomasyonu.MENU
                 if (MessageBox.Show("Silmek istediğinize emin misiniz?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     cPersoneller c = new cPersoneller();
-                    bool sonuc = c.personelSil(Convert.ToInt32(lvPersoneller.SelectedItems[0].Text));
+                    bool sonuc = c.personelSil(Convert.ToInt32(txtPersonelID2.Text));
                     if (sonuc)
                     {
                         MessageBox.Show("Kayıt başarıyla silinmiştiir.");
@@ -152,7 +151,7 @@ namespace CafeOtomasyonu.MENU
         {
             if (txtAd.Text.Trim() != "" & txtSoyad.Text.Trim() != "" & txtSifre.Text.Trim() != "" & txtSifreTekrar.Text != "" & txtGorevID2.Text.Trim() != "")
             {
-                if ((txtSifreTekrar.Text.Trim() == txtSifre.Text.Trim()) && (txtSifre.Text.Length > 5 || txtSifreTekrar.Text.Length > 5))
+                if ((txtSifreTekrar.Text.Trim() == txtSifre.Text.Trim()))
                 {
                     cPersoneller c = new cPersoneller();
                     c.PersonelAd = txtAd.Text.Trim();
@@ -188,10 +187,9 @@ namespace CafeOtomasyonu.MENU
             if (lvPersoneller.SelectedItems.Count > 0)
             {
 
-
                 if (txtAd.Text != "" || txtSoyad.Text != "" || txtSifre.Text != "" || txtSifreTekrar.Text != "" || txtGorevID2.Text != "")
                 {
-                    if ((txtSifreTekrar.Text.Trim() == txtSifre.Text.Trim()) && (txtSifre.Text.Length > 5 || txtSifreTekrar.Text.Length > 5))
+                    if ((txtSifreTekrar.Text.Trim() == txtSifre.Text.Trim()))
                     {
                         cPersoneller c = new cPersoneller();
                         c.PersonelAd = txtAd.Text.Trim();
@@ -249,7 +247,7 @@ namespace CafeOtomasyonu.MENU
                 }
                 else
                 {
-                    MessageBox.Show("Şifreeler aynı değil,lütfen tekrar deneyiniz.");
+                    MessageBox.Show("Şifreler aynı değil,lütfen tekrar deneyiniz.");
 
                 }
             }
@@ -264,7 +262,6 @@ namespace CafeOtomasyonu.MENU
         {
             if (lvPersoneller.SelectedItems.Count > 0)
             {
-                btnSil.Enabled = true;
                 txtPersonelID2.Text = lvPersoneller.SelectedItems[0].SubItems[0].Text;
                 cbGorevi.SelectedIndex = Convert.ToInt32(lvPersoneller.SelectedItems[0].SubItems[1].Text) - 1;
                 txtAd.Text = lvPersoneller.SelectedItems[0].SubItems[3].Text;
@@ -272,7 +269,7 @@ namespace CafeOtomasyonu.MENU
             }
             else
             {
-                btnSil.Enabled = false;
+                MessageBox.Show("Bir sorun oluştu, lütfen yetkili ile iletişime geçiniz.");
             }
 
 

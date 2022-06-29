@@ -40,6 +40,7 @@ namespace CafeOtomasyonu.MENU
             this.txtYeniSifreTekrar = new System.Windows.Forms.TextBox();
             this.txtYeniSifre = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtSifreTekrar = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -78,7 +79,6 @@ namespace CafeOtomasyonu.MENU
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblBilgi = new System.Windows.Forms.Label();
-            this.txtSifreTekrar = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -207,6 +207,14 @@ namespace CafeOtomasyonu.MENU
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // txtSifreTekrar
+            // 
+            this.txtSifreTekrar.Location = new System.Drawing.Point(152, 179);
+            this.txtSifreTekrar.Name = "txtSifreTekrar";
+            this.txtSifreTekrar.PasswordChar = '*';
+            this.txtSifreTekrar.Size = new System.Drawing.Size(156, 35);
+            this.txtSifreTekrar.TabIndex = 20;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -320,6 +328,7 @@ namespace CafeOtomasyonu.MENU
             // 
             this.txtSifre.Location = new System.Drawing.Point(152, 133);
             this.txtSifre.Name = "txtSifre";
+            this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(156, 35);
             this.txtSifre.TabIndex = 6;
             // 
@@ -485,6 +494,7 @@ namespace CafeOtomasyonu.MENU
             this.groupBox3.Size = new System.Drawing.Size(337, 387);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Visible = false;
             // 
             // label9
             // 
@@ -580,13 +590,6 @@ namespace CafeOtomasyonu.MENU
             this.lblBilgi.Size = new System.Drawing.Size(99, 20);
             this.lblBilgi.TabIndex = 17;
             this.lblBilgi.Text = "Giriş yapan";
-            // 
-            // txtSifreTekrar
-            // 
-            this.txtSifreTekrar.Location = new System.Drawing.Point(152, 179);
-            this.txtSifreTekrar.Name = "txtSifreTekrar";
-            this.txtSifreTekrar.Size = new System.Drawing.Size(156, 35);
-            this.txtSifreTekrar.TabIndex = 20;
             // 
             // frmSetting
             // 

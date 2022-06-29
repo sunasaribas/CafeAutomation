@@ -151,6 +151,7 @@ namespace CafeOtomasyonu.MENU
             this.txtAdisyonid.Name = "txtAdisyonid";
             this.txtAdisyonid.Size = new System.Drawing.Size(149, 37);
             this.txtAdisyonid.TabIndex = 0;
+            this.txtAdisyonid.Visible = false;
             // 
             // label5
             // 
@@ -162,6 +163,7 @@ namespace CafeOtomasyonu.MENU
             this.label5.Size = new System.Drawing.Size(146, 31);
             this.label5.TabIndex = 1;
             this.label5.Text = "Adisyon ID";
+            this.label5.Visible = false;
             // 
             // lvMusteriler
             // 
@@ -243,7 +245,7 @@ namespace CafeOtomasyonu.MENU
             this.btnAdisyonBul.Size = new System.Drawing.Size(117, 108);
             this.btnAdisyonBul.TabIndex = 6;
             this.btnAdisyonBul.UseVisualStyleBackColor = true;
-            this.btnAdisyonBul.Click += new System.EventHandler(this.btnAdisyonBul_Click);
+            this.btnAdisyonBul.Visible = false;
             // 
             // btnSiparisler
             // 
@@ -255,6 +257,7 @@ namespace CafeOtomasyonu.MENU
             this.btnSiparisler.Size = new System.Drawing.Size(117, 108);
             this.btnSiparisler.TabIndex = 7;
             this.btnSiparisler.UseVisualStyleBackColor = true;
+            this.btnSiparisler.Visible = false;
             this.btnSiparisler.Click += new System.EventHandler(this.btnSiparisler_Click);
             // 
             // btnGeri
@@ -267,7 +270,7 @@ namespace CafeOtomasyonu.MENU
             this.btnGeri.Size = new System.Drawing.Size(117, 108);
             this.btnGeri.TabIndex = 8;
             this.btnGeri.UseVisualStyleBackColor = true;
-            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
+            this.btnGeri.Visible = false;
             // 
             // btnCikis
             // 
@@ -335,6 +338,7 @@ namespace CafeOtomasyonu.MENU
             this.label9.Size = new System.Drawing.Size(87, 24);
             this.label9.TabIndex = 15;
             this.label9.Text = "Siparişler";
+            this.label9.Visible = false;
             // 
             // label10
             // 
@@ -346,6 +350,7 @@ namespace CafeOtomasyonu.MENU
             this.label10.Size = new System.Drawing.Size(110, 24);
             this.label10.TabIndex = 16;
             this.label10.Text = "Adisyon Bul";
+            this.label10.Visible = false;
             // 
             // frmMusteriAra
             // 

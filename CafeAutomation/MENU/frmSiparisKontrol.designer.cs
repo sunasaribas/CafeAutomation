@@ -317,6 +317,7 @@ namespace CafeOtomasyonu.MENU
             this.Controls.Add(this.txtToplamTutasr);
             this.Controls.Add(this.lvSatisDetaylari);
             this.Controls.Add(this.lvMusteriDetaylari);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSiparisKontrol";
             this.Text = "Sipariş Kontrol";
             this.Load += new System.EventHandler(this.frmSiparisKontrol_Load);

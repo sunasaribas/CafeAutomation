@@ -121,7 +121,7 @@ namespace CafeOtomasyonu.Classes
         {
             int miktar = 0;
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("Select count(*) Sayi from ADISYON where (DURUM=0) and (SERVISTURNO=2)", con);
+            SqlCommand cmd = new SqlCommand("Select count(*) as Sayi from ADISYON where (DURUM=0) and (SERVISTURNO=2)", con);
 
             try
             {
@@ -145,7 +145,7 @@ namespace CafeOtomasyonu.Classes
         {
             lv.Items.Clear();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select PAKETSIPARIS.MUSTERIID,MUSTERILER.AD+ ' '+ MUSTERILER.SOYAD as Musteri, ADISYON.ID as AdisyonID  FROM PAKETSIPARIS inner join MUSTERILER on MUSTERILER.ID=PAKETSIPARIS.MUSTERIID inner join ADISYON on ADISYON.ID=PAKETSIPARIS.ADISYONID where ADISYON.DURUM=0", con);
+            SqlCommand cmd = new SqlCommand("select PAKETSIPARIS.MUSTERIID,MUSTERILER.AD + ' ' + MUSTERILER.SOYAD as Musteri, ADISYON.ID as AdisyonID  FROM PAKETSIPARIS inner join MUSTERILER on MUSTERILER.ID=PAKETSIPARIS.MUSTERIID inner join ADISYON on ADISYON.ID=PAKETSIPARIS.ADISYONID where ADISYON.DURUM=0", con);
 
             SqlDataReader dr = null;
             try
@@ -163,7 +163,6 @@ namespace CafeOtomasyonu.Classes
                     lv.Items.Add(dr["MUSTERIID"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["Musteri"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["AdisyonID"].ToString());
-
 
                     sayac++;
                 }
